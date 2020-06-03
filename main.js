@@ -1,8 +1,8 @@
-const series = [['Animal Crossing', 'GameCube', 2001, 2.32],
-				['Wild World', 'NDS', 2005, 11.75],
-				['City Fold', 'Wii', 2008, 4.32],
-				['New Leaf', '3DS', 2013, 12.55],
-				['New Horizons', 'Switch', 2020, 13.41]]
+const main_series = [['Animal Crossing', 'GameCube', 2001, 2.32],
+				['Animal Crossing: Wild World', 'NDS', 2005, 11.75],
+				['Animal Crossing: City Fold', 'Wii', 2008, 4.32],
+				['Animal Crossing: New Leaf', '3DS', 2013, 12.55],
+				['Animal Crossing: New Horizons', 'Switch', 2020, 13.41]]
 
 let store = {
 	name : [],
@@ -11,8 +11,8 @@ let store = {
 	sales : []
 };
 
-for (var i = 0; i < series.length; i++) {
-	var s = series[i];
+for (var i = 0; i < main_series.length; i++) {
+	var s = main_series[i];
 	store.name.push(s[0]);
 	store.platform.push(s[1]);
 	store.year.push(s[2]);
@@ -44,7 +44,8 @@ function plotBar() {
 		},
 		tooltip: {
 			showAll: true,
-			shared: true
+			shared: true,
+			valueSuffix: ' millions'
 		},
 		plotOptions: {
 			bar: {
