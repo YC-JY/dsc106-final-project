@@ -1,3 +1,98 @@
+
+//<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+function plotTimeline() {
+	Highcharts.chart('timeline', {
+		credits: {
+			enabled: false
+		},
+		chart: {
+			zoomType: 'x',
+			type: 'timeline'
+		},
+		xAxis: {
+			type: 'datetime',
+			visible: false
+		},
+		yAxis: {
+			gridLineWidth: 1,
+			title: null,
+			labels: {
+				enabled: false
+			}
+		},
+		legend: {
+			enabled: false
+		},
+		title: {
+			text: 'Timeline of Animal Crossing'
+		},
+		subtitle: {
+			text: 'source: <a href="https://en.wikipedia.org/wiki/Animal_Crossing">www.wikipedia.org</a>'
+		},
+		tooltip: {
+			style: {
+				width: 300
+			}
+		},
+		series: [{
+			dataLabels: {
+				allowOverlap: false,
+				format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+					'{point.x:%d %b %Y}</span><br/>{point.label}'
+			},
+			marker: {
+				symbol: 'circle'
+			},
+			data: [{
+				x: Date.UTC(2001, 4, 14),
+				name: 'Animal Crossing',
+				label: 'Animal Crossing',
+				description: 'Platform: Nintendo 64 <br> Metacritic: 87'
+			}, {
+				x: Date.UTC(2005, 11, 23),
+				name: 'Animal Crossing: Wild World',
+				label: 'Animal Crossing: Wild World',
+				description: 'Platform: Nintendo DS <br> Metacritic: 86'
+			}, {
+				x: Date.UTC(2008, 11, 16),
+				name: 'Animal Crossing: City Folk',
+				label: 'Animal Crossing: City Folk',
+				description: 'Platform: Wii <br> Metacritic: 73'
+			}, {
+				x: Date.UTC(2012, 11, 8),
+				name: 'Animal Crossing: New Leaf',
+				label: 'Animal Crossing: New Leaf',
+				description: 'Platform: Nintendo 3DS <br> Metacritic: 88'
+			}, {
+				x: Date.UTC(2020, 3, 20),
+				name: 'Animal Crossing: New Horizons',
+				label: 'Animal Crossing: New Horizons',
+				description: 'Platform: Nintendo Switch <br> Metacritic: 91'
+			}, {
+				x: Date.UTC(2015, 7, 30),
+				name: 'Animal Crossing: Happy Home Designer',
+				label: 'Animal Crossing: Happy Home Designer',
+				description: 'Platform: Nintendo 3DS'
+			}, {
+				x: Date.UTC(2015, 11, 13),
+				name: 'Animal Crossing: Amiibo Festival',
+				label: 'Animal Crossing: Amiibo Festival',
+				description: 'Platform: Wii U'
+			}, {
+				x: Date.UTC(2017, 11, 21),
+				name: 'Animal Crossing: Pocket Camp',
+				label: 'Animal Crossing: Pocket Camp',
+				description: 'Platform: mobile'
+			}]
+		}]
+	});
+}
+
+
+
+
+
 // Global constants
 const DEBUG = true;
 const DINGUS_PRICE = 14.25;
@@ -364,6 +459,7 @@ async function loadJSON(path) {
 	return dataset;
 }
 
+/*
 function init() {
 	salesPromise = loadJSON('./data/sales.json');
 	stocksPromise = loadJSON('./data/stocks.json');
@@ -373,6 +469,9 @@ function init() {
 	stocksPromise.then(function (stocks) {
 		plotStocks(stocks);
 	});
+}*/
+function init() {
+	plotTimeline();
 }
 
 document.addEventListener('DOMContentLoaded', init, false);

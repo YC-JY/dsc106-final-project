@@ -44,3 +44,15 @@ body  {
     font-size: xx-large;
     color: green;
 }
+
+
+
+
+#content {
+    background-color: white;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
