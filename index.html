@@ -8,18 +8,20 @@
 	
 	<title>Story of Animal Crossing</title>
 	
-
+	
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
 
 	<link href="style.css" rel="stylesheet" />
 	<script src="main.js"></script>
 
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
-	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 </head>
 
-<body>
-	<div id="content">
+<body onload="init();">
+	<div id="content">		
 		<h1>Story of Animal Crossing</h1>
 
 		<section>
@@ -29,44 +31,55 @@
 		<section id="vitalScorecards">
 			<section id="seriesScorecard">
 				<h3>Series</h3>
-				<output id="dingusSold"> </output>
+				<p class="dashboard">7</p>
 			</section>
 
 			<section id="platformsScorecard">
 				<h3>Platforms</h3>
-				<output id="widgetSold"> </output>
+				<p class="dashboard">6</p>
 			</section>
 
 			<section id="yearsScorecard">
 				<h3>Years</h3>
-				<output id="totalSales"> </output>
+				<p class="dashboard">20</p>
 			</section>
 
 			<section id="salesScorecard">
 				<h3>Total Sales</h3>
-				<output id="totalSales"> </output>
+				<p class="dashboard">47.78 million</p>
 			</section>
 		</section>
 
 		<hr />
 
-		<section id="timeline">
-			<p>Timeline for Animal Crossing series</p>
+		<section>
+			<p>Timeline</p>
+			<section id="timeline" class="chart--container"></section>
 		</section>
 
 		<hr />
 
+		<section>
+			<p>Series Sales</p>
+			<section id="seriesSales" class="chart--container"></section>
+		</section>
+
+		<hr />
+		
 		<section id="summaryCharts" class="chart-parent--container">
-			<section id="salesPerMonthChart" class="chart--container"></section>
-			<section id="totalSalesChart" class="chart--container"></section>
+			<p>previous vs. current</p>
+			<section id="previousChart" class="chart--container"></section>
+			<section id="currentChart" class="chart--container"></section>
 		</section>
 
 		<hr />
 
-		<section id="stockChart"></section>
-	</div>
-	
+		<section>
+			<p>switch sales before vs. after</p>
+		</section>
 
+		<hr />
+	</div>	
 </body>
 
 </html>
