@@ -1,29 +1,24 @@
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 h1, h3 {
-    font-family: 'Paytone One', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body  {
+    background-image: url("./images/ACNH_Multicolour.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #vitalScorecards {
     display: grid;
     grid-column-gap: 50px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     text-align: center;
 }
-
-/* #summaryCharts {
-    display: flex;
-    height: 500px;
-}
-
-#summaryCharts section {
-    border: 1px solid black;
-    background: green;
-    flex: 1 1 auto;
-    flex-basis: 50%;
-} */
 
 .chart-parent--container {
     display: flex;
