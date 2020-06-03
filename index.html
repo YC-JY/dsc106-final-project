@@ -1,189 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>DSC 106 HW2</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>DSC106 - HW5 HighCharts Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
+	<link href="./styles/dashboard.css" rel="stylesheet" />
 
-        <script>
-            console.log('ok');
-            function showDialog() {
-                var dialog = document.querySelector('dialog');
-                console.log(dialog);
-                dialog.show();
-                setTimeout(function () {
-                    dialog.close();
-                }, 3000);
-            }
-        </script>
-    </head>
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+	<script src="./scripts/world_map.js"></script>
+	<script src="./scripts/main.js"></script>
+</head>
 
-    <body>
-        <header>
-            <h1><img class="logo" src="dw-logo.png" alt="logo-image">Global Dashboard</h1>
-        </header>
+<body>
+	<h1><img src="./images/dw-logo.png" alt="Dingus & Widget" height="50" width="150" />Global Dashboard</h1>
 
-        <main>
-            <section class="flex-container">
-                <div class="flex-item">
-                    <h3>Dingus</h3>
-                    <p class="number">0</p>
-                    
-                </div>
-                <div class="flex-item">
-                    <h3>Widget</h3>
-                    <p class="number">0</p>
-                    
-                </div>
-                <div class="flex-item">
-                    <h3>Sales</h3>
-                    <p class="number">
-                        <span class="dollar-sign">$</span><span>0.00</span>
-                    </p>
-                </div>
-            </section><hr>
+	<section>
+		<div id="myMap"></div>
+	</section>
 
-            <div class="grid-container">
-                <div class="grid-item-1">
-                    <figure>
-                        <figcaption>Total Sales Breakdown</figcaption>
-                        <img id="chart-1" src="pie.png" alt="pie">
-                    </figure>
-                </div>
-                    
-                <div class="grid-item-2">
-                    <figure>
-                        <figcaption>Sales Per Month</figcaption>
-                        <img id="chart-2" src="line.png" alt="line">
-                    </figure>
-                </div>
-                
-                <div class="grid-item-3">
-                    <div class="iframe-container">
-                        <iframe src="https://app.zingsoft.com/demos/view/BZV3ARI9"></iframe><br>
-                        <a href="https://app.zingsoft.com/demos/view/BZV3ARI9" target="_blank">Source</a>
-                    </div>
-                </div>
-            </div><hr>
+	<section id="vitalScorecards">
+		<section id="dingusScorecard">
+			<h3>Dingus</h3>
+			<output id="dingusSold"> </output>
+		</section>
 
-            <table>
-                <caption>Order History</caption>
+		<section id="widgetScorecard">
+			<h3>Widget</h3>
+			<output id="widgetSold"> </output>
+		</section>
 
-                <colgroup>
-                    <col id="first-col" span="1">
-                    <col span="5">
-                </colgroup>
+		<section id="salesScorecard">
+			<h3>Sales</h3>
+			<output id="totalSales"> </output>
+		</section>
+	</section>
 
-                <thead>
-                    <tr>
-                        <th rowspan="2">ID#</th>
-                        <th rowspan="2">Date</th>
-                        <th colspan="2">Quantity</th>
-                        <th rowspan="2">Total</th>
-                        <th rowspan="2">Payment</th>
-                    </tr>
-                    <tr>
-                        <th>Dingus</th>
-                        <th>Widget</th>
-                    </tr>
-                </thead>
+	<hr />
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>12/12/19</td>
-                        <td>4</td>
-                        <td>10</td>
-                        <td>$174.90</td>
-                        <td>Paypal</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>12/21/19</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>$38.23</td>
-                        <td>Visa</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>1/5/20</td>
-                        <td>14</td>
-                        <td>19</td>
-                        <td>$436.31</td>
-                        <td>Visa</td>
-                    </tr>
-                </tbody>
+	<section id="summaryCharts" class="chart-parent--container">
+		<section id="salesPerMonthChart" class="chart--container"></section>
+		<section id="totalSalesChart" class="chart--container"></section>
+	</section>
 
-                <tfoot>
-                    <tr>
-                        <td colspan="6">&copy; 2020 D&W Worldwide.</td>
-                    </tr>
-                </tfoot>
-            </table><br>
+	<hr />
 
-            <details onclick="showDialog()">
-                <summary>Order Form</summary>
-                
-                <dialog id="dialog">This section will work only after HW2!</dialog>
+	<section id="stockChart"></section>
 
-                <form><hr>
-                    <fieldset>
-                        <label>Dingus</label>
-                        <input size="5" value="0">
-                        <label>@</label>
-                        <input value="16.25">
-                        <label>= $</label>
-                        <input value="0.00"><br>
-                    
-                        <label>Widget</label>
-                        <input size="5" value="0">
-                        <label>@</label>
-                        <input value="10.99">
-                        <label>= $</label>
-                        <input value="0.00"><br>
-                    
-                        <label>Total $</label>
-                        <input value="0.00"><br>
-                    
-                        <label>Payment</label><br>
-                        <select size="4">
-                            <option>Visa</option>
-                            <option>MasterCard</option>
-                            <option>Paypal</option>
-                        </select><br>
-                    
-                        <label>Shipping</label>
-                        <input list="options">
-                        <datalist id="options">
-                            <option>Standard FREE</option>
-                            <option>2 Bussiness Days: $10</option>
-                            <option>USPS Priority: $5</option>
-                        </datalist><br>
-                    
-                        <label>Comment</label>
-                        <textarea></textarea><br>
-                    
-                        <input type="button" value="Cancel">
-                        <input id="order-button" type="button" value="Order" disabled>
-                    </fieldset>
-                </form>
-            </details>
+</body>
 
-            <p>Disclaimer: This page is provided <em>as is</em></p>
-
-            <p>Notes</p>
-            <ul>
-                <li>Your order will leave warehouse in 3-5 days</li>
-                <li>If you have any question please contact us at 123456789</li>
-                <li>D&W is a proud supporter of the <i>Stuart Collection</i></li>
-            </ul>
-        </main>
-
-        <footer>
-            <address>9500 Gilman Dr, La Jolla, CA 92093</address>
-        </footer>
-    </body>
 </html>
