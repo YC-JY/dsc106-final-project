@@ -648,8 +648,7 @@ function plotMap() {
 }
 
 var pieColor = ['#f44c56', '#f3747b','#f6a8ac', '#f8d6d7', '#22d1c2', '#40e3d6', '#81efe6', '#cef8f5'];
-var pieColors = ['#8e025a', '#e6027e', '#f39ac1', '#fbdeeb', '#122659', '#18407d', '#819fc4', '#d4dee9'];
-var pieColors2 = ['#b60373', '#e93798', '#f39ac1', '#fbdeeb', '#1a3579', '#3a629f', '#819fc4', '#d4dee9'];
+var pieColor2 = ['#8e025a', '#e6027e', '#f39ac1', '#fbdeeb', '#122659', '#18407d', '#819fc4', '#d4dee9'];
 function plotPie() {
 	Highcharts.chart('pieGame', {
 		credits: {
