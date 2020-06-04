@@ -211,440 +211,436 @@ function plotTimeline() {
 
 function plotStock() {
 	Highcharts.stockChart('stockChart', {
-	 title: {
-	  text: '2020 Monthly Global Hardware Sales Comparisons'
-	 },
-	 
-	 subtitle: {
-	  text: 'Source: <a href=" ">www.vgchartz.com</a >'
-	 },
+		title: {
+			text: '2020 Monthly Global Hardware Sales Comparisons'
+		},
+		
+		subtitle: {
+			text: 'Source: <a href="https://www.vgchartz.com/tools/hw_date.php">www.vgchartz.com</a>'
+		},
 	
-	 plotOptions: {
-	  series: {
-	   dataGrouping: {
-		smoothed: true,
-	   }
-	  }
-	 },
-			 
-	 xAxis: { 
-	  startOnTick: false,
-	  endOnTick: false,
-	  showLastLabel: true,
-	  title: {
-	   text: 'Date'
-	  },
-	  tyep: 'datetime',
-	  labels: {
-	   formatter: function() {
-		return Highcharts.dateFormat('%b', this.value);
-	   }
-	  },
-	  tickPositioner: function () {
-				   var positions = [],
-					   tick = Math.floor(this.dataMin),
-					   increment = 1000 * 3600 * 24 * 30;
-   
-				   for (tick; tick <= this.dataMax; tick += increment) {
-					   positions.push(tick);
-				   }
-				   return positions;
-	  },
-	  plotLines: [{
-	   color: '#888',
-	   value: 1584687600,
-	   width: 1,
-	   label: {
-		text: 'Animal Crossing: New Horizons released'
-	   }
-	  }],
-	 },
+		plotOptions: {
+			series: {
+				dataGrouping: {
+					smoothed: true,
+				}
+			}
+		},
+										
+		xAxis: {	
+			startOnTick: false,
+			endOnTick: false,
+			showLastLabel: true,
+			title: {
+				text: 'Date'
+			},
+			tyep: 'datetime',
+			labels: {
+				formatter: function() {
+					return Highcharts.dateFormat('%b', this.value);
+				}
+			},
+			tickPositioner: function () {
+                var positions = [],
+                    tick = Math.floor(this.dataMin),
+                    increment = 1000 * 3600 * 24 * 30;
+
+                for (tick; tick <= this.dataMax; tick += increment) {
+                    positions.push(tick);
+                }
+                return positions;
+			},
+			plotLines: [{
+				color: '#888',
+				value: 1584687600,
+				width: 1,
+				label: {
+					text: 'Animal Crossing: New Horizons released'
+				}
+			}],
+		},
 	
-	 yAxis: {
-	  title: {
-	   text: 'Units'
-	  },
-	  min: 0,
-	  opposite: false
-	 },
+		yAxis: {
+			title: {
+				text: 'Units'
+			},
+			min: 0,
+			opposite: false
+		},
 	
-	 legend: {
-	  enabled: true
-	 }, 
-   
-	 navigator: {
-	  enabled: false
-	 },
-   
-	 rangeSelector: {
-	  enabled: false
-	 },
-   
-	 scrollbar: {
-			   enabled: false
-	 }, 
-	 
-	 credits: {
-	  enabled: false
-	 },
-   
-	 series: [{
-	  showLastLabel: true,
-	  cropThreshold: 1,
-	  name:'PS4',
-	  color: gameColor[1],
-	  data: [
-	  {
-	   x: 1578096000000,
-	   y: 232934
-	  },
-	  {
-	   x: 1578700800000,
-	   y: 176063
-	  },
-	  {
-	   x: 1579305600000,
-	   y: 139596
-	  },
-	  {
-	   x: 1579910400000,
-	   y: 136624
-	  },
-	  {
-	   x: 1580515200000,
-	   y: 136455
-	  },
-	  {
-	   x: 1581120000000,
-	   y: 142277
-	  },
-	  {
-	   x: 1581724800000,
-	   y: 154989
-	  },
-	  {
-	   x: 1582329600000,
-	   y: 144366
-	  },
-	  {
-	   x: 1582934400000,
-	   y: 143008
-	  },
-	  {
-	   x: 1583539200000,
-	   y: 200896
-	  },
-	  {
-	   x: 1584144000000,
-	   y: 245611
-	  },
-	  {
-	   x: 1584748800000,
-	   y: 257531
-	  },
-	  {
-	   x: 1585353600000,
-	   y: 255150
-	  },
-	  {
-	   x: 1585958400000,
-	   y: 257183
-	  },
-	  {
-	   x: 1586563200000,
-	   y: 551388
-	  },
-	  {
-	   x: 1587168000000,
-	   y: 371529
-	  },
-	  {
-	   x: 1587772800000,
-	   y: 334080
-	  },
-	  {
-	   x: 1588377600000,
-	   y: 277497
-	  },
-	  {
-	   x: 1588982400000,
-	   y: 248140
-	  },
-	  {
-	   x: 1589587200000,
-	   y: 224575
-	  },
-	  {
-	   x: 1590192000000,
-	   y: 209185
-	  }]
-	 },
-	 {
-	  showLastLabel: true,
-	  cropThreshold: 1,
-	  name:'XOne',
-	  color: gameColor[4],
-	  data: [
-	  {
-	   x: 1578096000000,
-	   y: 69900
-	  },
-	  {
-	   x: 1578700800000,
-	   y: 38488
-	  },
-	  {
-	   x: 1579305600000,
-	   y: 38283
-	  },
-	  {
-	   x: 1579910400000,
-	   y: 37228
-	  },
-	  {
-	   x: 1580515200000,
-	   y: 38501
-	  },
-	  {
-	   x: 1581120000000,
-	   y: 47139
-	  },
-	  {
-	   x: 1581724800000,
-	   y: 48361
-	  },
-	  {
-	   x: 1582329600000,
-	   y: 49425
-	  },
-	  {
-	   x: 1582934400000,
-	   y: 54679
-	  },
-	  {
-	   x: 1583539200000,
-	   y: 89140
-	  },
-	  {
-	   x: 1584144000000,
-	   y: 103757
-	  },
-	  {
-	   x: 1584748800000,
-	   y: 100909
-	  },
-	  {
-	   x: 1585353600000,
-	   y: 94497
-	  },
-	  {
-	   x: 1585958400000,
-	   y: 86515
-	  },
-	  {
-	   x: 1586563200000,
-	   y: 132391
-	  },
-	  {
-	   x: 1587168000000,
-	   y: 137881
-	  },
-	  {
-	   x: 1587772800000,
-	   y: 125360
-	  },
-	  {
-	   x: 1588377600000,
-	   y: 122602
-	  },
-	  {
-	   x: 1588982400000,
-	   y: 104468
-	  },
-	  {
-	   x: 1589587200000,
-	   y: 89252
-	  },
-	  {
-	   x: 1590192000000,
-	   y: 83000
-	  }]
-	 },
-	 {
-	  showLastLabel: true,
-	  cropThreshold: 1,
-	  name:'NS',
-	  id: 'NS',
-	  color: gameColor[3],
-	  lineWidth: 5,
-	  data: [
-	  {
-	   x: 1578096000000,
-	   y: 468030
-	  },
-	  {
-	   x: 1578700800000,
-	   y: 326998
-	  },
-	  {
-	   x: 1579305600000,
-	   y: 282462
-	  },
-	  {
-	   x: 1579910400000,
-	   y: 250518
-	  },
-	  {
-	   x: 1580515200000,
-	   y: 257718
-	  },
-	  {
-	   x: 1581120000000,
-	   y: 297048
-	  },
-	  {
-	   x: 1581724800000,
-	   y: 271012
-	  },
-	  {
-	   x: 1582329600000,
-	   y: 233016
-	  },
-	  {
-	   x: 1582934400000,
-	   y: 248921
-	  },
-	  {
-	   x: 1583539200000,
-	   y: 286734
-	  },
-	  {
-	   x: 1584144000000,
-	   y: 380391
-	  },
-	  {
-	   x: 1584748800000,
-	   y: 1043393
-	  },
-	  {
-	   x: 1585353600000,
-	   y: 782344
-	  },
-	  {
-	   x: 1585958400000,
-	   y: 537597
-	  },
-	  {
-	   x: 1586563200000,
-	   y: 420832
-	  },
-	  {
-	   x: 1587168000000,
-	   y: 419526
-	  },
-	  {
-	   x: 1587772800000,
-	   y: 516735
-	  },
-	  {
-	   x: 1588377600000,
-	   y: 488662
-	  },
-	  {
-	   x: 1588982400000,
-	   y: 412651
-	  },
-	  {
-	   x: 1589587200000,
-	   y: 373459
-	  },
-	  {
-	   x: 1590192000000,
-	   y: 360438
-	  }]
-	 },
-	 {
-	  showInLegend: false,
-	  type: 'flags',
-	  data: [{
-	   x: Date.UTC(2020, 2, 20),
-	   title: 'Animal Crossing: New Horizons',
-	   text: 'Officially released',
-	  }],
-	  onSeries: 'NS',
-	  y: -50,
-	  width: -200
-	 }]
+		legend: {
+			enabled: true
+		},	
+
+		navigator: {
+			enabled: false
+		},
+
+		rangeSelector: {
+			enabled: false
+		},
+
+		scrollbar: {
+            enabled: false
+		},	
+		
+		credits: {
+			enabled: false
+		},
+
+		series: [{
+			showLastLabel: true,
+			cropThreshold: 1,
+			name:'PS4',
+			data: [
+			{
+				x: 1578096000000,
+				y: 232934
+			},
+			{
+				x: 1578700800000,
+				y: 176063
+			},
+			{
+				x: 1579305600000,
+				y: 139596
+			},
+			{
+				x: 1579910400000,
+				y: 136624
+			},
+			{
+				x: 1580515200000,
+				y: 136455
+			},
+			{
+				x: 1581120000000,
+				y: 142277
+			},
+			{
+				x: 1581724800000,
+				y: 154989
+			},
+			{
+				x: 1582329600000,
+				y: 144366
+			},
+			{
+				x: 1582934400000,
+				y: 143008
+			},
+			{
+				x: 1583539200000,
+				y: 200896
+			},
+			{
+				x: 1584144000000,
+				y: 245611
+			},
+			{
+				x: 1584748800000,
+				y: 257531
+			},
+			{
+				x: 1585353600000,
+				y: 255150
+			},
+			{
+				x: 1585958400000,
+				y: 257183
+			},
+			{
+				x: 1586563200000,
+				y: 551388
+			},
+			{
+				x: 1587168000000,
+				y: 371529
+			},
+			{
+				x: 1587772800000,
+				y: 334080
+			},
+			{
+				x: 1588377600000,
+				y: 277497
+			},
+			{
+				x: 1588982400000,
+				y: 248140
+			},
+			{
+				x: 1589587200000,
+				y: 224575
+			},
+			{
+				x: 1590192000000,
+				y: 209185
+			}]
+		},
+		{
+			showLastLabel: true,
+			cropThreshold: 1,
+			name:'XOne',
+			data: [
+			{
+				x: 1578096000000,
+				y: 69900
+			},
+			{
+				x: 1578700800000,
+				y: 38488
+			},
+			{
+				x: 1579305600000,
+				y: 38283
+			},
+			{
+				x: 1579910400000,
+				y: 37228
+			},
+			{
+				x: 1580515200000,
+				y: 38501
+			},
+			{
+				x: 1581120000000,
+				y: 47139
+			},
+			{
+				x: 1581724800000,
+				y: 48361
+			},
+			{
+				x: 1582329600000,
+				y: 49425
+			},
+			{
+				x: 1582934400000,
+				y: 54679
+			},
+			{
+				x: 1583539200000,
+				y: 89140
+			},
+			{
+				x: 1584144000000,
+				y: 103757
+			},
+			{
+				x: 1584748800000,
+				y: 100909
+			},
+			{
+				x: 1585353600000,
+				y: 94497
+			},
+			{
+				x: 1585958400000,
+				y: 86515
+			},
+			{
+				x: 1586563200000,
+				y: 132391
+			},
+			{
+				x: 1587168000000,
+				y: 137881
+			},
+			{
+				x: 1587772800000,
+				y: 125360
+			},
+			{
+				x: 1588377600000,
+				y: 122602
+			},
+			{
+				x: 1588982400000,
+				y: 104468
+			},
+			{
+				x: 1589587200000,
+				y: 89252
+			},
+			{
+				x: 1590192000000,
+				y: 83000
+			}]
+		},
+		{
+			showLastLabel: true,
+			cropThreshold: 1,
+			name:'NS',
+			id: 'NS',
+			data: [
+			{
+				x: 1578096000000,
+				y: 468030
+			},
+			{
+				x: 1578700800000,
+				y: 326998
+			},
+			{
+				x: 1579305600000,
+				y: 282462
+			},
+			{
+				x: 1579910400000,
+				y: 250518
+			},
+			{
+				x: 1580515200000,
+				y: 257718
+			},
+			{
+				x: 1581120000000,
+				y: 297048
+			},
+			{
+				x: 1581724800000,
+				y: 271012
+			},
+			{
+				x: 1582329600000,
+				y: 233016
+			},
+			{
+				x: 1582934400000,
+				y: 248921
+			},
+			{
+				x: 1583539200000,
+				y: 286734
+			},
+			{
+				x: 1584144000000,
+				y: 380391
+			},
+			{
+				x: 1584748800000,
+				y: 1043393
+			},
+			{
+				x: 1585353600000,
+				y: 782344
+			},
+			{
+				x: 1585958400000,
+				y: 537597
+			},
+			{
+				x: 1586563200000,
+				y: 420832
+			},
+			{
+				x: 1587168000000,
+				y: 419526
+			},
+			{
+				x: 1587772800000,
+				y: 516735
+			},
+			{
+				x: 1588377600000,
+				y: 488662
+			},
+			{
+				x: 1588982400000,
+				y: 412651
+			},
+			{
+				x: 1589587200000,
+				y: 373459
+			},
+			{
+				x: 1590192000000,
+				y: 360438
+			}]
+		},
+		{
+			showInLegend: false,
+			type: 'flags',
+			data: [{
+				x: Date.UTC(2020, 2, 20),
+				title: 'Animal Crossing: New Horizons',
+				text: 'Officially released',
+			}],
+			onSeries: 'NS',
+			y: -50,
+			width: -200
+		}]
 	});
-   }
+}
    
 function plotMap() {
 	Highcharts.mapChart('usMap', {
-	 title: {
-	  text: 'US Google Trends'
-	 },
+		title: {
+			text: 'US Google Trends'
+		},
 	
-	 subtitle: {
-	  text: 'Source: <a href="https://www.vgchartz.com/tools/hw_date.php">www.vgchartz.com</a >'
-	 },
+		subtitle: {
+			text: 'Source: <a href="https://trends.google.com/trends/explore?date=today%203-m&geo=US&q=animal%20crossing">trends.google.com</a>'
+		},
 	
-	 mapNavigation: {
-	  enabled: false
-	 },
-   
-	 legend: {
-			   layout: 'horizontal',
-			   title: {
-				   text: 'Search Interest'
-			   }
-		   },
+		mapNavigation: {
+			enabled: false
+		},
+
+		legend: {
+            layout: 'horizontal',
+            title: {
+                text: 'Search Interest'
+            }
+        },
 	
-	 colorAxis: {
-	  min: 35,
-	  max: 100,
-			   type: 'linear',
-			   minColor: '#ffffff',
-	  maxColor: '#f4e155',
-	 },
-   
-	 plotOptions: {
-	  series: {
-	   fillOpacity: 0.3
-	  }
-	 },
-	 
-	 tooltip: { 
-	  formatter: function() {
-	   return this.point.name + ': ' + this.point.value + ' search interest'
-	  }
-	 },
-   
-	 credits: {
-	  enabled: false
-	 },
+		colorAxis: {
+			min: 35,
+			max: 100,
+            type: 'linear',
+            minColor: '#ffffff',
+			maxColor: '#f4e155',
+		},
+
+		plotOptions: {
+			series: {
+				fillOpacity: 0.3
+			}
+		},
+		
+		tooltip: { 
+			formatter: function() {
+				return this.point.name + ': ' + this.point.value + ' search interest'
+			}
+		},
+
+		credits: {
+			enabled: false
+		},
 	
-	 series: [{
-	  mapData: Highcharts.maps['countries/us/us-all'],
-	  data: us,
-	  joinBy: ['postal-code', 'code'],
-			   dataLabels: {
-				   enabled: true,
-				   color: '#FFFFFF',
-				   format: '{point.code}'
-	  },
-	  borderWidth: 0.2,
-	  borderColor: 'silver',
-	  states: {
-	   hover: {
-		color: '#94d6e3',
-		borderColor: '#0C3'
-	   },
-	   select: {
-		color: '#7CA82B'
-	   }
-	  }
-		   }]
-	}); 
+		series: [{
+			mapData: Highcharts.maps['countries/us/us-all'],
+			data: us,
+			joinBy: ['postal-code', 'code'],
+            dataLabels: {
+                enabled: true,
+                color: '#FFFFFF',
+                format: '{point.code}'
+			},
+			borderWidth: 0.2,
+			borderColor: 'silver',
+			states: {
+				hover: {
+					color: '#94d6e3',
+					borderColor: '#0C3'
+				},
+				select: {
+					color: '#7CA82B'
+				}
+			}
+        }]
+	});	
 }
 
 var pieColor = ['#f44c56', '#f3747b','#f6a8ac', '#f8d6d7', '#22d1c2', '#40e3d6', '#81efe6', '#cef8f5'];
