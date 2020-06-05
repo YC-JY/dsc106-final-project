@@ -291,6 +291,7 @@ function plotStock() {
 			showLastLabel: true,
 			cropThreshold: 1,
 			name:'PS4',
+			color: gameColor[1],
 			data: [
 			{
 				x: 1578096000000,
@@ -381,6 +382,7 @@ function plotStock() {
 			showLastLabel: true,
 			cropThreshold: 1,
 			name:'XOne',
+			color: gameColor[4],
 			data: [
 			{
 				x: 1578096000000,
@@ -472,6 +474,8 @@ function plotStock() {
 			cropThreshold: 1,
 			name:'NS',
 			id: 'NS',
+			color: gameColor[3],
+			lineWidth: 5,
 			data: [
 			{
 				x: 1578096000000,
@@ -576,7 +580,7 @@ function plotStock() {
 function plotMap() {
 	Highcharts.mapChart('usMap', {
 		title: {
-			text: 'US Google Trends'
+			text: "US Google Trends of Keyword 'Animal Crossing'"
 		},
 	
 		subtitle: {
