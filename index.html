@@ -20,6 +20,7 @@
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
 	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
 </head>
 
 <body onload="init();">
@@ -29,22 +30,22 @@
 		<section id="vitalScorecards">
 			<section id="seriesScorecard">
 				<h3>Series</h3>
-				<p class="dashboard">7</p >
+				<p class="dashboard">7</p>
 			</section>
-		
+
 			<section id="platformsScorecard">
 				<h3>Platforms</h3>
-				<p class="dashboard">6</p >
+				<p class="dashboard">6</p>
 			</section>
-		
+
 			<section id="yearsScorecard">
 				<h3>Years</h3>
-				<p class="dashboard">20</p >
+				<p class="dashboard">20</p>
 			</section>
-		
+
 			<section id="salesScorecard">
 				<h3>Total Sales</h3>
-				<p class="dashboard">47.78 million</p >
+				<p class="dashboard">47.78 million</p>
 			</section>
 		</section>
 		<hr />
@@ -68,25 +69,26 @@
 		<hr />
 
 		<section>
-			<p>Google Trends</p >
+			<p>Google Trends</p>
 			<section id="usMap" class="chart--container"></section>
 		</section>
 		<hr />
 
-		<div>
+		<section>
 			<p>The Percentage of Male and Female Gamers</p>
 			<section class="chart-parent--container">
 				<section id="pieGame" class="chart--container"></section>
 				<section id="pieAnimalCrossing" class="chart--container"></section>
 			</section>
-		</div>
+		</section>
 		<hr />
 
 		<section>
-			<p>reason 2</p>
-		</section>
-		<hr />
-	</div>	
+			<figure class="highcharts-figure">
+				<div id="wordCloud"></div>
+			</figure>	
+		</section>	
+	</div>
 </body>
 
 </html>

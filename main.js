@@ -1,13 +1,12 @@
 let name = ['Animal Crossing', 
-   'Animal Crossing: Wild World', 
-   'Animal Crossing: City Fold', 
-   'Animal Crossing: New Leaf',
-   'Animal Crossing: New Horizons'];
+			'Animal Crossing: Wild World', 
+			'Animal Crossing: City Fold', 
+			'Animal Crossing: New Leaf',
+			'Animal Crossing: New Horizons'];
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
 let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
 
-let us = [
-	{'code': 'HI', 'value': 100},
+let us = [{'code': 'HI', 'value': 100},
 	{'code': 'WA', 'value': 96},
 	{'code': 'OR', 'value': 88},
 	{'code': 'UT', 'value': 80},
@@ -59,6 +58,68 @@ let us = [
 	{'code': 'MS', 'value': 36},
 	{'code': 'DC', 'value': 35}];
 
+let words = [{'name': 'island', 'weight': 14}, 
+	{'name': 'celeste', 'weight': 10},
+	{'name': 'time', 'weight': 9},
+	{'name': 'cute', 'weight': 8},
+	{'name': 'day', 'weight': 8},
+	{'name': 'turnip', 'weight': 7},
+	{'name': 'love', 'weight': 6},
+	{'name': 'wedding', 'weight': 6},
+	{'name': 'code', 'weight': 6},
+	{'name': 'dodo', 'weight': 5},
+	{'name': 'villager', 'weight': 5},
+	{'name': 'price', 'weight': 5},
+	{'name': 'outfit', 'weight': 5},
+	{'name': 'boxes', 'weight': 4},
+	{'name': 'room', 'weight': 4},
+	{'name': 'friends', 'weight': 4},
+	{'name': 'happy', 'weight': 4},
+	{'name': 'summer', 'weight': 4},
+	{'name': 'treasure', 'weight': 4},
+	{'name': 'dodocode', 'weight': 4},
+	{'name': 'bells', 'weight': 4},
+	{'name': 'wearing', 'weight': 4},
+	{'name': 'lol', 'weight': 4},
+	{'name': 'free', 'weight': 4},
+	{'name': 'flowers', 'weight': 4},
+	{'name': 'don', 'weight': 4},
+	{'name': 'appreciated', 'weight': 4},
+	{'name': 'catalog', 'weight': 4},
+	{'name': 'finally', 'weight': 4},
+	{'name': 'good', 'weight': 4},
+	{'name': 'move', 'weight': 3},
+	{'name': 'items', 'weight': 3},
+	{'name': 'play', 'weight': 3},
+	{'name': 'perfect', 'weight': 3},
+	{'name': 'things', 'weight': 3},
+	{'name': 'cutest', 'weight': 3},
+	{'name': 'acnhtrade', 'weight': 3},
+	{'name': 'heart', 'weight': 3},
+	{'name': 'birthday', 'weight': 3},
+	{'name': 'decided', 'weight': 3},
+	{'name': 'acn', 'weight': 3},
+	{'name': 'stars', 'weight': 3},
+	{'name': 'shirt', 'weight': 3},
+	{'name': 'reneigh', 'weight': 5},
+	{'name': 'singing', 'weight': 5},
+	{'name': 'join', 'weight': 5},
+	{'name': 'link', 'weight': 4},
+	{'name': 'click', 'weight': 4},
+	{'name': '♡♡rt', 'weight': 4},
+	{'name': 'making', 'weight': 4},
+	{'name': 'hey', 'weight': 4},
+	{'name': '♡♡…', 'weight': 4},
+	{'name': 'turnipsexchange', 'weight': 4},
+	{'name': 'nook', 'weight': 4},
+	{'name': 'cyrus', 'weight': 3},
+	{'name': 'party', 'weight': 3},
+	{'name': 'night', 'weight': 3},
+	{'name': 'reese', 'weight': 3},
+	{'name': 'shower', 'weight': 3},
+	{'name': 'meteor', 'weight': 3},
+	{'name': 'interested', 'weight': 3}];
+
 function plotBar() {
 	Highcharts.chart('seriesSales', {
 		chart: {
@@ -103,7 +164,7 @@ function plotBar() {
 				{y: sales[1], color: gameColor[1]},
 				{y: sales[2], color: gameColor[2]},
 				{y: sales[3], color: gameColor[3]}, 
-                {y: sales[4], color: gameColor[4]}],
+				{y: sales[4], color: gameColor[4]}],
 			showInLegend: false,
 		}]
 	});
@@ -116,7 +177,8 @@ function plotTimeline() {
 		},
 		chart: {
 			zoomType: 'x',
-			type: 'timeline'},
+			type: 'timeline'
+		},
 		xAxis: {
 			type: 'datetime',
 			visible: false
@@ -144,7 +206,7 @@ function plotTimeline() {
 		},
 		series: [{
 			dataLabels: {
-				allowOverlap: true,
+				allowOverlap: false,
 				format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
 					'{point.x:%d %b %Y}</span><br/>{point.label}',
 				connectorWidth: 3,
@@ -158,49 +220,49 @@ function plotTimeline() {
 			data: [{
 				x: Date.UTC(2001, 4, 14),
 				name: 'Animal Crossing',
-				label: 'Animal Crossing released.',
+				label: 'Animal Crossing',
 				description: 'Platform: Nintendo 64 <br> Metacritic: 87',
 				color: "#b19bcb"
 			}, {
 				x: Date.UTC(2005, 11, 23),
 				name: 'Animal Crossing: Wild World',
-				label: 'Animal Crossing: Wild World released.',
+				label: 'Animal Crossing: Wild World',
 				description: 'Platform: Nintendo DS <br> Metacritic: 86',
 				color: "#f3747b"
 			}, {
 				x: Date.UTC(2008, 11, 16),
 				name: 'Animal Crossing: City Folk',
-				label: 'Animal Crossing: City Folk released.',
+				label: 'Animal Crossing: City Folk',
 				description: 'Platform: Wii <br> Metacritic: 73',
 				color: "#93d6e3"
 			}, {
 				x: Date.UTC(2012, 11, 8),
 				name: 'Animal Crossing: New Leaf',
-				label: 'Animal Crossing: New Leaf released.',
+				label: 'Animal Crossing: New Leaf',
 				description: 'Platform: Nintendo 3DS <br> Metacritic: 88',
 				color: "#14c8b9"
 			}, {
 				x: Date.UTC(2020, 3, 20),
 				name: 'Animal Crossing: New Horizons',
-				label: 'Animal Crossing: New Horizons released.',
+				label: 'Animal Crossing: New Horizons',
 				description: 'Platform: Nintendo Switch <br> Metacritic: 91',
 				color: "#ecde78"
 			}, {
 				x: Date.UTC(2015, 7, 30),
 				name: 'Animal Crossing: Happy Home Designer',
-				label: 'Animal Crossing: Happy Home Designer released.',
+				label: 'Animal Crossing: Happy Home Designer',
 				description: 'Platform: Nintendo 3DS',
 				color: "#38f8d1"
 			}, {
 				x: Date.UTC(2015, 11, 13),
 				name: 'Animal Crossing: Amiibo Festival',
-				label: 'Animal Crossing: Amiibo Festival released.',
+				label: 'Animal Crossing: Amiibo Festival',
 				description: 'Platform: Wii U',
 				color: "#80a5fb"
 			}, {
 				x: Date.UTC(2017, 11, 21),
 				name: 'Animal Crossing: Pocket Camp',
-				label: 'Animal Crossing: Pocket Camp released.',
+				label: 'Animal Crossing: Pocket Camp',
 				description: 'Platform: mobile',
 				color: "#82a0aa"
 			}]
@@ -576,7 +638,7 @@ function plotStock() {
 		}]
 	});
 }
-   
+
 function plotMap() {
 	Highcharts.mapChart('usMap', {
 		title: {
@@ -787,13 +849,44 @@ function plotPie() {
 			]
 		}]
 	});
-	
 }
 
-function init(){
+function plotCloud() {
+	Highcharts.chart('wordCloud', {
+		accessibility: {
+			screenReaderSection: {
+				beforeChartFormat: '<h5>{chartTitle}</h5>' +
+					'<div>{chartSubtitle}</div>' +
+					'<div>{chartLongdesc}</div>' +
+					'<div>{viewTableButton}</div>'
+			}
+		},
+
+		title: {
+			text: 'Wordcloud of Animal Crossing on Twitter'
+		},
+
+		subtitle: {
+			text: 'Source: Tweetroot app'
+		},
+
+		credits: {
+			enabled: false
+		},
+
+		series: [{
+			type: 'wordcloud',
+			data: words,
+			name: 'Relative Prominence'
+		}]
+	});
+}
+
+function init() { 
 	plotTimeline();
 	plotBar();
-	plotPie();
 	plotStock();
 	plotMap();
+	plotPie();
+	plotCloud();
 }
