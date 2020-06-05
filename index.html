@@ -15,12 +15,14 @@
 
 	<link href="style.css" rel="stylesheet" />
 	<script src="main.js"></script>
+	<script src="tryout.js"></script>
 
 	<script src="https://code.highcharts.com/stock/highstock.js"></script>
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
 	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
 	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+	<script src="https://code.highcharts.com/modules/heatmap.js"></script>
 </head>
 
 <body onload="init();">
@@ -88,6 +90,12 @@
 				<div id="wordCloud"></div>
 			</figure>	
 		</section>	
+		<hr />
+
+		<section>
+			<p>Villagers Born in June</p>
+			<section id="calendar" class="chart--container"></section>
+		</section>
 	</div>
 </body>
 

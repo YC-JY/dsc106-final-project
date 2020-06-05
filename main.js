@@ -124,55 +124,38 @@ let words = [
 	{'name': 'interested', 'weight': 3}
 ];
 
-function plotBar() {
-	Highcharts.chart('seriesSales', {
-		chart: {
-			type: 'bar'
-		},
-		title: {
-			text: 'Series Sales'
-		},
-		subtitle: {
-			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
-		},
-		xAxis: {
-			categories: name,
-			title: {
-				text: 'Series'
-			}
-		},
-		yAxis: {
-			min: 0,
-			title: {
-				text: 'Sales (millions)'
-			}
-		},
-		tooltip: {
-			showAll: true,
-			shared: true
-		},
-		plotOptions: {
-			bar: {
-				dataLabels: {
-					enabled: true
-				}
-			}
-		},
-		credits: {
-			enabled: false
-		},
-		series: [{
-			name: 'Sales',
-			data: [
-				{y: sales[0], color: gameColor[0]},
-				{y: sales[1], color: gameColor[1]},
-				{y: sales[2], color: gameColor[2]},
-				{y: sales[3], color: gameColor[3]}, 
-				{y: sales[4], color: gameColor[4]}],
-			showInLegend: false,
-		}]
-	});
-}
+let date = [
+	{'x': 1, 'y': 4, 'value': '1 <br> Keaton', 'description': '<img src="https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/Keaton_NH.png/revision/latest/scale-to-width-down/350?cb=20200521051358" srcset="https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/Keaton_NH.png/revision/latest/scale-to-width-down/350?cb=20200521051358 1x, https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/Keaton_NH.png/revision/latest?cb=20200521051358 2x" class="pi-image-thumbnail" alt="" width="270" height="332" data-image-key="Keaton_NH.png" data-image-name="Keaton NH.png">'},
+	{'x': 2, 'y': 4, 'value': '2 <br> Lucy', 'description': '<img alt="Lucy, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/e/e5/Lucy_NH.png/175px-Lucy_NH.png" decoding="async" width="175" height="324" srcset="https://dodo.ac/np/images/thumb/e/e5/Lucy_NH.png/263px-Lucy_NH.png 1.5x, https://dodo.ac/np/images/thumb/e/e5/Lucy_NH.png/350px-Lucy_NH.png 2x">'},
+	{'x': 3, 'y': 4, 'value': '3 <br> Filbert', 'description': '<img alt="Filbert, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/3/34/Filbert_NH_2.png/200px-Filbert_NH_2.png" decoding="async" width="200" height="243" srcset="https://dodo.ac/np/images/thumb/3/34/Filbert_NH_2.png/300px-Filbert_NH_2.png 1.5x, https://dodo.ac/np/images/3/34/Filbert_NH_2.png 2x">'},
+	{'x': 4, 'y': 4, 'value': '4 <br> Reneigh', 'description': '<img alt="Reneigh, an Animal Crossing villager." src="https://dodo.ac/np/images/9/92/Reneigh_NH.png" decoding="async" width="200" height="286">'},
+	{'x': 5, 'y': 4, 'value': '5 <br> Camofrog', 'description': '<img alt="Camofrog, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/d/d5/Camofrog_NLa.png/150px-Camofrog_NLa.png" decoding="async" width="150" height="232" srcset="https://dodo.ac/np/images/thumb/d/d5/Camofrog_NLa.png/225px-Camofrog_NLa.png 1.5x, https://dodo.ac/np/images/thumb/d/d5/Camofrog_NLa.png/300px-Camofrog_NLa.png 2x">'},
+	{'x': 6, 'y': 4, 'value': '6 <br> Lyle & Raddle', 'description': '<img src="https://vignette.wikia.nocookie.net/animalcrossing/images/7/78/LyleNL.png/revision/latest/scale-to-width-down/350?cb=20140725170531" srcset="https://vignette.wikia.nocookie.net/animalcrossing/images/7/78/LyleNL.png/revision/latest/scale-to-width-down/350?cb=20140725170531 1x, https://vignette.wikia.nocookie.net/animalcrossing/images/7/78/LyleNL.png/revision/latest/scale-to-width-down/700?cb=20140725170531 2x" class="pi-image-thumbnail" alt="" width="270" height="332" data-image-key="LyleNL.png" data-image-name="LyleNL.png"> <img src="https://vignette.wikia.nocookie.net/animalcrossing/images/3/32/Raddle_HD.png/revision/latest/scale-to-width-down/350?cb=20180518162935" srcset="https://vignette.wikia.nocookie.net/animalcrossing/images/3/32/Raddle_HD.png/revision/latest/scale-to-width-down/350?cb=20180518162935 1x, https://vignette.wikia.nocookie.net/animalcrossing/images/3/32/Raddle_HD.png/revision/latest?cb=20180518162935 2x" class="pi-image-thumbnail" alt="" width="330" height="332" data-image-key="Raddle_HD.png" data-image-name="Raddle HD.png">'},
+	{'x': 0, 'y': 3, 'value': '7 <br> Zell', 'description': '<img alt="Zell, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/c/c0/Zell_NH.png/175px-Zell_NH.png" decoding="async" width="175" height="294" srcset="https://dodo.ac/np/images/thumb/c/c0/Zell_NH.png/263px-Zell_NH.png 1.5x, https://dodo.ac/np/images/thumb/c/c0/Zell_NH.png/350px-Zell_NH.png 2x">'},
+	{'x': 1, 'y': 3, 'value': '8 <br> Peanut', 'description': '<img alt="Peanut, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/d/d5/Peanut_NH.png/175px-Peanut_NH.png" decoding="async" width="175" height="173" srcset="https://dodo.ac/np/images/thumb/d/d5/Peanut_NH.png/263px-Peanut_NH.png 1.5x, https://dodo.ac/np/images/thumb/d/d5/Peanut_NH.png/350px-Peanut_NH.png 2x">'},
+	{'x': 2, 'y': 3, 'value': '9 <br> Alfonso', 'description': '<img src="https://vignette.wikia.nocookie.net/animalcrossing/images/d/d8/Alfonso_NewHorizons.png/revision/latest?cb=20200408175408" srcset="https://vignette.wikia.nocookie.net/animalcrossing/images/d/d8/Alfonso_NewHorizons.png/revision/latest?cb=20200408175408 1x, https://vignette.wikia.nocookie.net/animalcrossing/images/d/d8/Alfonso_NewHorizons.png/revision/latest?cb=20200408175408 2x" class="pi-image-thumbnail" alt="" width="220" height="332" data-image-key="Alfonso_NewHorizons.png" data-image-name="Alfonso NewHorizons.png">'},
+	{'x': 3, 'y': 3, 'value': '10 <br> Walker', 'description': '<img alt="Walker, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/0/0f/Walker_NH.png/175px-Walker_NH.png" decoding="async" width="175" height="291" srcset="https://dodo.ac/np/images/thumb/0/0f/Walker_NH.png/263px-Walker_NH.png 1.5x, https://dodo.ac/np/images/thumb/0/0f/Walker_NH.png/350px-Walker_NH.png 2x">'},
+	{'x': 4, 'y': 3, 'value': '11 <br> Pudge', 'description': '<img alt="Pudge, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/8/87/Pudge_NH.png/175px-Pudge_NH.png" decoding="async" width="175" height="305" srcset="https://dodo.ac/np/images/thumb/8/87/Pudge_NH.png/263px-Pudge_NH.png 1.5x, https://dodo.ac/np/images/thumb/8/87/Pudge_NH.png/350px-Pudge_NH.png 2x">'},
+	{'x': 5, 'y': 3, 'value': '12 <br> Bettina', 'description': '<img alt="Bettina, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/b/bd/Bettina_NH.png/175px-Bettina_NH.png" decoding="async" width="175" height="263" srcset="https://dodo.ac/np/images/thumb/b/bd/Bettina_NH.png/263px-Bettina_NH.png 1.5x, https://dodo.ac/np/images/thumb/b/bd/Bettina_NH.png/350px-Bettina_NH.png 2x">'},
+	{'x': 6, 'y': 3, 'value': '13 <br> Scoot', 'description': '<img alt="Scoot, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/e/ec/Scoot_NH.png/175px-Scoot_NH.png" decoding="async" width="175" height="276" srcset="https://dodo.ac/np/images/thumb/e/ec/Scoot_NH.png/263px-Scoot_NH.png 1.5x, https://dodo.ac/np/images/thumb/e/ec/Scoot_NH.png/350px-Scoot_NH.png 2x">'},
+	{'x': 0, 'y': 2, 'value': '14 <br> Pippy', 'description': '<img alt="Pippy, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/a/a1/Pippy_NH.png/175px-Pippy_NH.png" decoding="async" width="175" height="354" srcset="https://dodo.ac/np/images/thumb/a/a1/Pippy_NH.png/263px-Pippy_NH.png 1.5x, https://dodo.ac/np/images/thumb/a/a1/Pippy_NH.png/350px-Pippy_NH.png 2x">'},
+	{'x': 1, 'y': 2, 'value': '15 <br> Maple', 'description': '<img alt="Maple, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/a/a2/Maple_NH.png/175px-Maple_NH.png" decoding="async" width="175" height="305" srcset="https://dodo.ac/np/images/thumb/a/a2/Maple_NH.png/263px-Maple_NH.png 1.5x, https://dodo.ac/np/images/thumb/a/a2/Maple_NH.png/350px-Maple_NH.png 2x">'},
+	{'x': 2, 'y': 2, 'value': '16 <br> Roscoe', 'description': '<img alt="Roscoe, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/8/8e/Roscoe_NH.png/200px-Roscoe_NH.png" decoding="async" width="200" height="353" srcset="https://dodo.ac/np/images/thumb/8/8e/Roscoe_NH.png/300px-Roscoe_NH.png 1.5x, https://dodo.ac/np/images/thumb/8/8e/Roscoe_NH.png/400px-Roscoe_NH.png 2x">'},
+	{'x': 3, 'y': 2, 'value': '17 <br> Spike & Tangy', 'description': '<img alt="Spike, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/1/13/Spike_NL.png/200px-Spike_NL.png" decoding="async" width="200" height="367" srcset="https://dodo.ac/np/images/1/13/Spike_NL.png 1.5x"> <img alt="Tangy, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/6/6f/Tangy_NH.png/175px-Tangy_NH.png" decoding="async" width="175" height="367" srcset="https://dodo.ac/np/images/thumb/6/6f/Tangy_NH.png/263px-Tangy_NH.png 1.5x, https://dodo.ac/np/images/thumb/6/6f/Tangy_NH.png/350px-Tangy_NH.png 2x">'},
+	{'x': 4, 'y': 2, 'value': '18 <br> Cookie', 'description': '<img alt="Cookie, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/d/d9/Cookie_NH.png/175px-Cookie_NH.png" decoding="async" width="175" height="291" srcset="https://dodo.ac/np/images/thumb/d/d9/Cookie_NH.png/263px-Cookie_NH.png 1.5x, https://dodo.ac/np/images/thumb/d/d9/Cookie_NH.png/350px-Cookie_NH.png 2x">'},
+	{'x': 5, 'y': 2, 'value': '19 <br> Sally', 'description': '<img alt="Sally, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/5/54/Sally_NLa.png/175px-Sally_NLa.png" decoding="async" width="175" height="233" srcset="https://dodo.ac/np/images/thumb/5/54/Sally_NLa.png/263px-Sally_NLa.png 1.5x, https://dodo.ac/np/images/thumb/5/54/Sally_NLa.png/350px-Sally_NLa.png 2x">'},
+	{'x': 6, 'y': 2, 'value': '20 <br> Graham', 'description': '<img alt="Graham, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/a/a1/Graham_NH.png/150px-Graham_NH.png" decoding="async" width="150" height="219" srcset="https://dodo.ac/np/images/thumb/a/a1/Graham_NH.png/225px-Graham_NH.png 1.5x, https://dodo.ac/np/images/thumb/a/a1/Graham_NH.png/300px-Graham_NH.png 2x">'},
+	{'x': 0, 'y': 1, 'value': '21 <br> Sydney', 'description': '<img alt="Sydney, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/3/3f/Sydney_NH.png/175px-Sydney_NH.png" decoding="async" width="175" height="209" srcset="https://dodo.ac/np/images/thumb/3/3f/Sydney_NH.png/263px-Sydney_NH.png 1.5x, https://dodo.ac/np/images/thumb/3/3f/Sydney_NH.png/350px-Sydney_NH.png 2x">'},
+	{'x': 1, 'y': 1, 'value': '22 <br> Jacques', 'description': '<img alt="Jacques, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/0/03/Jacques_NH.png/175px-Jacques_NH.png" decoding="async" width="175" height="330" srcset="https://dodo.ac/np/images/thumb/0/03/Jacques_NH.png/263px-Jacques_NH.png 1.5x, https://dodo.ac/np/images/thumb/0/03/Jacques_NH.png/350px-Jacques_NH.png 2x">'},
+	{'x': 2, 'y': 1, 'value': '23 <br> Tammy', 'description': '<img alt="Tammy, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/a/aa/Tammy_NH.png/175px-Tammy_NH.png" decoding="async" width="175" height="305" srcset="https://dodo.ac/np/images/thumb/a/aa/Tammy_NH.png/263px-Tammy_NH.png 1.5x, https://dodo.ac/np/images/thumb/a/aa/Tammy_NH.png/350px-Tammy_NH.png 2x">'},
+	{'x': 3, 'y': 1, 'value': '24 <br> Bluebear', 'description': '<img alt="Bluebear, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/4/49/Bluebear_NH.png/200px-Bluebear_NH.png" decoding="async" width="200" height="349" srcset="https://dodo.ac/np/images/thumb/4/49/Bluebear_NH.png/300px-Bluebear_NH.png 1.5x, https://dodo.ac/np/images/thumb/4/49/Bluebear_NH.png/400px-Bluebear_NH.png 2x">'},
+	{'x': 4, 'y': 1, 'value': '25 <br> Drake', 'description': '<img alt="Drake, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/e/e0/Drake_NH.png/175px-Drake_NH.png" decoding="async" width="175" height="276" srcset="https://dodo.ac/np/images/thumb/e/e0/Drake_NH.png/263px-Drake_NH.png 1.5x, https://dodo.ac/np/images/thumb/e/e0/Drake_NH.png/350px-Drake_NH.png 2x">'},
+	{'x': 5, 'y': 1, 'value': '26 <br> Marina', 'description': '<img alt="Marina, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/2/25/Marina_NH.png/175px-Marina_NH.png" decoding="async" width="175" height="302" srcset="https://dodo.ac/np/images/thumb/2/25/Marina_NH.png/263px-Marina_NH.png 1.5x, https://dodo.ac/np/images/thumb/2/25/Marina_NH.png/350px-Marina_NH.png 2x">'},
+	{'x': 6, 'y': 1, 'value': '27 <br> Deena', 'description': '<img alt="Deena, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/b/b8/Deena_NH.png/175px-Deena_NH.png" decoding="async" width="175" height="276" srcset="https://dodo.ac/np/images/thumb/b/b8/Deena_NH.png/263px-Deena_NH.png 1.5x, https://dodo.ac/np/images/thumb/b/b8/Deena_NH.png/350px-Deena_NH.png 2x">'},
+	{'x': 0, 'y': 0, 'value': '28 <br> Kidd', 'description': '<img alt="Kidd, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/7/7a/Kidd_NH.png/200px-Kidd_NH.png" decoding="async" width="200" height="278" srcset="https://dodo.ac/np/images/thumb/7/7a/Kidd_NH.png/300px-Kidd_NH.png 1.5x, https://dodo.ac/np/images/thumb/7/7a/Kidd_NH.png/400px-Kidd_NH.png 2x">'},
+	{'x': 1, 'y': 0, 'value': '29 <br> Merry', 'description': '<img alt="Merry, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/4/4f/Merry_NH.png/175px-Merry_NH.png" decoding="async" width="175" height="367" srcset="https://dodo.ac/np/images/thumb/4/4f/Merry_NH.png/263px-Merry_NH.png 1.5x, https://dodo.ac/np/images/thumb/4/4f/Merry_NH.png/350px-Merry_NH.png 2x">'},
+	{'x': 2, 'y': 0, 'value': '30 <br> Broccolo & Weber', 'description': '<img alt="Broccolo, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/8/89/Broccolo_NLa.png/175px-Broccolo_NLa.png" decoding="async" width="175" height="271" srcset="https://dodo.ac/np/images/thumb/8/89/Broccolo_NLa.png/263px-Broccolo_NLa.png 1.5x, https://dodo.ac/np/images/8/89/Broccolo_NLa.png 2x"> <img alt="Weber, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/200px-Weber_NH.png" decoding="async" width="200" height="316" srcset="https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/300px-Weber_NH.png 1.5x, https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/400px-Weber_NH.png 2x">'}
+];
 
 function plotTimeline() {
 	Highcharts.chart('timeline', {
@@ -270,6 +253,56 @@ function plotTimeline() {
 				description: 'Platform: mobile',
 				color: "#82a0aa"
 			}]
+		}]
+	});
+}
+
+function plotBar() {
+	Highcharts.chart('seriesSales', {
+		chart: {
+			type: 'bar'
+		},
+		title: {
+			text: 'Series Sales'
+		},
+		subtitle: {
+			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
+		},
+		xAxis: {
+			categories: name,
+			title: {
+				text: 'Series'
+			}
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Sales (millions)'
+			}
+		},
+		tooltip: {
+			showAll: true,
+			shared: true
+		},
+		plotOptions: {
+			bar: {
+				dataLabels: {
+					enabled: true
+				}
+			}
+		},
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'Sales',
+			data: [
+				{y: sales[0], color: gameColor[0]},
+				{y: sales[1], color: gameColor[1]},
+				{y: sales[2], color: gameColor[2]},
+				{y: sales[3], color: gameColor[3]}, 
+				{y: sales[4], color: gameColor[4]}],
+			showInLegend: false,
 		}]
 	});
 }
@@ -893,6 +926,65 @@ function plotCloud() {
 	});
 }
 
+function plotCalendar() {
+	Highcharts.chart('calendar', {
+		chart: {
+			type: 'heatmap',
+		},
+	  
+		title: {
+			text: 'June Calendar'
+		},
+
+		credits: {
+			enabled: false
+		},
+	  
+		xAxis: {
+			categories: ['Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.', 'Sun.'],
+			opposite: true
+		},
+	  
+		yAxis: {
+		  	visible: false
+		},
+	  
+		legend: {
+		 	enabled: false
+		},
+	  
+		plotOptions: {
+			series: {
+				borderWidth: 1,
+				borderColor: "#000000",
+			}
+		},
+
+		tooltip: {
+			formatter: function() {
+				return 'June ' + this.point.value + '<br>' + this.point.description;
+			},
+			useHTML: true,
+		},
+	  
+		series: [{
+			name: 'date',
+			color: '#cdbddc',
+			data: date,
+			dataLabels: {
+				enabled: true,
+				align: 'left', 
+				x: 30,
+				style: {
+					color: 'white',
+					fontSize: '13px',
+					textOutline: false
+				}
+			}
+		}]	
+	});
+}
+
 function init() { 
 	plotTimeline();
 	plotBar();
@@ -900,4 +992,5 @@ function init() {
 	plotMap();
 	plotPie();
 	plotCloud();
+	plotCalendar();
 }
