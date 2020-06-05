@@ -15,88 +15,110 @@
 
 	<link href="style.css" rel="stylesheet" />
 	<script src="main.js"></script>
-	<script src="tryout.js"></script>
 
 	<script src="https://code.highcharts.com/stock/highstock.js"></script>
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
 	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
-	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
-	<script src="https://code.highcharts.com/modules/heatmap.js"></script>
 </head>
 
 <body onload="init();">
+	<div id = "console">
+		<div id = "screen">
+			<h3 class="center" style="color:white">Story of Animal Crossing</h3><br>
+			<h3 class="center" style="color:white">By Yichun Ren & Jiayi Fan</h3>
+			<section id="vitalScorecards">
+				<section id="seriesScorecard">
+				 <h3 style="color:white">Series</h3>
+				 <p style="color:white" class="dashboard">7</p >
+				</section>
+			
+				<section id="platformsScorecard">
+				 <h3 style="color:white">Platforms</h3>
+				 <p style="color:white" class="dashboard">8</p >
+				</section>
+			
+				<section id="yearsScorecard">
+				 <h3 style="color:white">Years</h3>
+				 <p style="color:white" class="dashboard">19</p >
+				</section>
+			
+				<section id="salesScorecard">
+				 <h3 style="color:white">Total Sales</h3>
+				 <p style="color:white" class="dashboard">47.78 million</p >
+				</section>
+			</section>
+		</div>
+	</div>
 	<div id="content">		
 		<h1>Story of Animal Crossing</h1>
 
-		<section id="vitalScorecards">
-			<section id="seriesScorecard">
-				<h3>Series</h3>
-				<p class="dashboard">7</p>
-			</section>
+		<img id="pic" src="https://www.highcharts.com/samples/graphics/sun.png" alt="Animal Crossing"/>
 
-			<section id="platformsScorecard">
-				<h3>Platforms</h3>
-				<p class="dashboard">6</p>
-			</section>
-
-			<section id="yearsScorecard">
-				<h3>Years</h3>
-				<p class="dashboard">20</p>
-			</section>
-
-			<section id="salesScorecard">
-				<h3>Total Sales</h3>
-				<p class="dashboard">47.78 million</p>
-			</section>
-		</section>
 		<hr />
 
 		<section>
-			<p>Timeline</p>
+			<h1>Timeline</h1>
 			<section id="timeline" class="chart--container"></section>
 		</section>
 		<hr />
 
 		<section>
-			<p>Series Sales</p>
+			<h1>Series Sales</h1>
 			<section id="seriesSales" class="chart--container"></section>
 		</section>
 		<hr />
 
 		<section>
-			<p>Switch Sales</p>
+			<h1>Switch Sales</h1>
 			<section id="stockChart" class="chart--container"></section>
 		</section>
 		<hr />
 
 		<section>
-			<p>Google Trends</p>
+			<h1>Google Trends</h1 >
 			<section id="usMap" class="chart--container"></section>
 		</section>
 		<hr />
 
-		<section>
-			<p>The Percentage of Male and Female Gamers</p>
+		<div>
+			<h1>Age and Gender Distribution</h1>
 			<section class="chart-parent--container">
 				<section id="pieGame" class="chart--container"></section>
 				<section id="pieAnimalCrossing" class="chart--container"></section>
 			</section>
+			<section>
+				<p>Kyogoku, the current manager of Nintendo's Entertainment Planning & Development (EPD) Group No. 5, is the producer, director, and supervisor of Animal Crossing series since 2008</p>
+				<img src="./images/Kyogoku Cropped.jpg" class="center">
+
+			</section>
+			
+		</div>
+		<hr />
+
+		<div>
+			<p>The Percentage of Male and Female Gamers</p>
+			<section class="chart-parent--container">
+				<section id="pieGame2" class="chart--container"></section>
+				<section id="pieAnimalCrossing2" class="chart--container"></section>
+			</section>
+		</div>
+		<hr />
+		
+		<section id="summaryCharts" class="chart-parent--container">
+			<p>previous vs. current</p>
+			<section id="previousChart" class="chart--container"></section>
+			<section id="currentChart" class="chart--container"></section>
 		</section>
+
 		<hr />
 
 		<section>
-			<figure class="highcharts-figure">
-				<div id="wordCloud"></div>
-			</figure>	
-		</section>	
-		<hr />
-
-		<section>
-			<p>Villagers Born in June</p>
-			<section id="calendar" class="chart--container"></section>
+			<p>switch sales before vs. after</p>
 		</section>
-	</div>
+
+		<hr />
+	</div>	
 </body>
 
 </html>
