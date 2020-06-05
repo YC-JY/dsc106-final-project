@@ -4,7 +4,7 @@ let name = ['Animal Crossing',
    'Animal Crossing: New Leaf',
    'Animal Crossing: New Horizons'];
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
-gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"]
+let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
 
 let us = [
 	{'code': 'HI', 'value': 100},
@@ -108,7 +108,6 @@ function plotBar() {
 		}]
 	});
 }
-
 
 function plotTimeline() {
 	Highcharts.chart('timeline', {
