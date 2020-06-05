@@ -6,7 +6,8 @@ let name = ['Animal Crossing',
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
 let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
 
-let us = [{'code': 'HI', 'value': 100},
+let us = [
+	{'code': 'HI', 'value': 100},
 	{'code': 'WA', 'value': 96},
 	{'code': 'OR', 'value': 88},
 	{'code': 'UT', 'value': 80},
@@ -56,9 +57,11 @@ let us = [{'code': 'HI', 'value': 100},
 	{'code': 'AL', 'value': 46},
 	{'code': 'SC', 'value': 46},
 	{'code': 'MS', 'value': 36},
-	{'code': 'DC', 'value': 35}];
+	{'code': 'DC', 'value': 35}
+];
 
-let words = [{'name': 'island', 'weight': 14}, 
+let words = [
+	{'name': 'island', 'weight': 14}, 
 	{'name': 'celeste', 'weight': 10},
 	{'name': 'time', 'weight': 9},
 	{'name': 'cute', 'weight': 8},
@@ -118,7 +121,8 @@ let words = [{'name': 'island', 'weight': 14},
 	{'name': 'reese', 'weight': 3},
 	{'name': 'shower', 'weight': 3},
 	{'name': 'meteor', 'weight': 3},
-	{'name': 'interested', 'weight': 3}];
+	{'name': 'interested', 'weight': 3}
+];
 
 function plotBar() {
 	Highcharts.chart('seriesSales', {
@@ -310,15 +314,7 @@ function plotStock() {
                     positions.push(tick);
                 }
                 return positions;
-			},
-			plotLines: [{
-				color: '#888',
-				value: 1584687600,
-				width: 1,
-				label: {
-					text: 'Animal Crossing: New Horizons released'
-				}
-			}],
+			}
 		},
 	
 		yAxis: {
@@ -629,8 +625,8 @@ function plotStock() {
 			type: 'flags',
 			data: [{
 				x: Date.UTC(2020, 2, 20),
-				title: 'Animal Crossing: New Horizons',
-				text: 'Officially released',
+				title: 'ACNH officially released',
+				text: 'large spike',
 			}],
 			onSeries: 'NS',
 			y: -50,
@@ -852,6 +848,16 @@ function plotPie() {
 }
 
 function plotCloud() {
+	var rectangularEgg = function cloud(t) {
+		t *= 0.01;
+		return {
+			x: t * Math.cos(t) * 2,
+			y: t * Math.sin(t) 
+		};
+	};    
+		
+	Highcharts.seriesTypes.wordcloud.prototype.spirals.rectangular = rectangularEgg;
+
 	Highcharts.chart('wordCloud', {
 		accessibility: {
 			screenReaderSection: {
@@ -877,6 +883,11 @@ function plotCloud() {
 		series: [{
 			type: 'wordcloud',
 			data: words,
+			spiral: "rectangular", 
+			rotation: {
+				from: 0,
+				to: 0
+			},
 			name: 'Relative Prominence'
 		}]
 	});
