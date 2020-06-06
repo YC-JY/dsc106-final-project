@@ -666,7 +666,7 @@ function plotMap() {
 }
 
 var pieColor = ['#f44c56', '#f3747b','#f6a8ac', '#f8d6d7', '#22d1c2', '#40e3d6', '#81efe6', '#cef8f5'];
-var pieColor2 = ['#8e025a', '#e6027e', '#f39ac1', '#fbdeeb', '#122659', '#18407d', '#819fc4', '#d4dee9'];
+var pieColor2 = [ '#f6323d', '#f45760','#f8a0a5', '#f8d6d7', '#0bbcad', '#2fdacc', '#6be9df', '#cef8f5'];
 function plotPie() {
 	Highcharts.chart('pieGame', {
 		credits: {
@@ -713,7 +713,7 @@ function plotPie() {
 				pie: {
                     shadow: false
 				},
-				colors: pieColor
+				colors: pieColor2
 			}
 		},
 		legend: {
@@ -1089,7 +1089,6 @@ function init(){
 	plotTimeline();
 	plotBar();
 	plotPie();
-	//plotPie2();
 	plotStock();
 	plotMap();
 }
