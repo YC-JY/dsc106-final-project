@@ -205,7 +205,7 @@ function plotTimeline() {
 				format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
 					'{point.x:%d %b %Y}</span><br/>{point.label}',
 				connectorWidth: 3,
-				width: 120
+				width: 100
 			},
 			marker: {
 				symbol: 'circle',
@@ -779,7 +779,7 @@ function plotPie() {
 
 		},
 		title: {
-			text: 'Age/Gender of<br>Core Gamers',
+			text: 'Console Players',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
@@ -849,7 +849,7 @@ function plotPie() {
 
 		},
 		title: {
-			text: 'Age/Gender of<br>Animal Crossing Players',
+			text: 'Animal Crossing<br> Players',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60

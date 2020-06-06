@@ -1,5 +1,6 @@
 * {
-    font-family: 'Bitter', serif;
+    font-family: 'Jura', sans-serif;
+
 }
 
 h1 {
@@ -11,6 +12,8 @@ h2 {
     font-family: 'Jura', sans-serif;
     font-size: 30px;
     text-align: center;
+    font-weight: bold;
+
 }
 
 h3 {
@@ -41,7 +44,8 @@ p {
     background-color: white;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 3%;
@@ -148,9 +152,10 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #80a5fb, #82caa5);
-    height: 3px;
     border: none;
-    border-radius: 3px;
+    height: 2px;
+    width: 80%;
+    border-radius: 30px;
 }
 
 #title2 {
@@ -161,9 +166,10 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #82caa5, #b19bcb);
-    height: 3px;
+    height: 1px;
+    width: 80%;
     border: none;
-    border-radius: 3px;
+    border-radius: 30px;
 }
 
 #title3 {
@@ -174,7 +180,8 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #b19bcb, #93d6e3);
-    height: 3px;
+    height: 2px;
+    width: 80%;
     border: none;
     border-radius: 3px;
 }
@@ -187,7 +194,8 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #93d6e3, #f8996d);
-    height: 3px;
+    height: 2px;
+    width: 80%;
     border: none;
     border-radius: 3px;
 }
@@ -200,7 +208,8 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #f8996d, #14c8b9);
-    height: 3px;
+    height: 1px;
+    width: 80%;
     border: none;
     border-radius: 3px;
 }
@@ -213,11 +222,17 @@ p {
     margin-top: 10%;
     margin-bottom: 10%;
     background: linear-gradient(to right, #14c8b9, #f3747b);
-    height: 3px;
+    height: 1.5px;
+    width: 80%;
     border: none;
     border-radius: 3px;
 }
 
 #title7 {
     color: #f3747b;
+}
+
+#KyogokuText {
+    padding-left: 20%;
+    padding-right: 20%;
 }
