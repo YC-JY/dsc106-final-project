@@ -32,7 +32,6 @@ p {
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 2%;
-    border-color: lightyellow;
     border: 15px solid transparent;
     border-image: linear-gradient(to bottom right, #f3747b 0%, #93d6e3 25%, #14c8b9 50%, #ecde78 75%, #b19bcb 100%);
     border-image-slice: 1;
