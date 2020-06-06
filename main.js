@@ -1,6 +1,6 @@
 let name = ['Animal Crossing', 
 			'Animal Crossing: Wild World', 
-			'Animal Crossing: City Fold', 
+			'Animal Crossing: City Folk', 
 			'Animal Crossing: New Leaf',
 			'Animal Crossing: New Horizons'];
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
@@ -180,11 +180,7 @@ function plotTimeline() {
 			enabled: false
 		},
 		title: {
-			text: '',
-			style: {
-				fontSize: '30px',
-				color: gameColor[0]
-			}
+			text: 'Release Timeline of Animal Crossing Series'
 		},
 		subtitle: {
 			text: 'source: <a href="https://en.wikipedia.org/wiki/Animal_Crossing">www.wikipedia.org</a >'
@@ -194,18 +190,17 @@ function plotTimeline() {
 			outside: true,
 			style: {
 				width: 150
-			}
+			},
 		},
 		series: [{
 			dataLabels: {
 				enabled: true,
-				//useHTML: true,
 				outside: true,
 				allowOverlap: false,
 				format: '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
 					'{point.x:%d %b %Y}</span><br/>{point.label}',
 				connectorWidth: 3,
-				width: 100
+				width: 130
 			},
 			marker: {
 				symbol: 'circle',
@@ -216,63 +211,61 @@ function plotTimeline() {
 				x: Date.UTC(2001, 3, 14),
 				name: 'Animal Crossing',
 				label: 'Animal Crossing released.',
-				description: 'Platform: Nintendo 64 <br> Metacritic: 87'+ 
+				description: 'Date: 4/14/2001 <br> Platform: Nintendo 64 <br> Metacritic: 87'+ 
 				'<br><img src="./images/AC_cover.png"style="height:40%;width:40%;" class="center"></img><br><br><br><br>',
 				color: "#b19bcb"
 			}, {
 				x: Date.UTC(2005, 10, 23),
 				name: 'Animal Crossing: Wild World',
 				label: 'Animal Crossing: Wild World released.',
-				description: 'Platform: Nintendo DS <br> Metacritic: 86'+ 
-				'<br><img src="./images/WW_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
+				description: 'Date: 11/23/2005 <br> Platform: Nintendo DS <br> Metacritic: 86'+ 
+				'<br><img src="./images/WW_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br><br>',
 				color: "#f3747b"
 			}, {
 				x: Date.UTC(2008, 10, 16),
 				name: 'Animal Crossing: City Folk',
 				label: 'Animal Crossing: City Folk released.',
-				description: 'Platform: Wii <br> Metacritic: 73'+ 
-				'<br><img src="./images/CF_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br><br>',
+				description: 'Date: 11/16/2008 <br> Platform: Wii <br> Metacritic: 73'+ 
+				'<br><img src="./images/CF_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br><br><br>',
 				color: "#93d6e3"
 			}, {
 				x: Date.UTC(2012, 10, 8),
 				name: 'Animal Crossing: New Leaf',
 				label: 'Animal Crossing: New Leaf released.',
-				description: 'Platform: Nintendo 3DS <br> Metacritic: 88'+ 
+				description: 'Date: 11/8/2012 <br> Platform: Nintendo 3DS <br> Metacritic: 88'+ 
 				'<br><img src="./images/NL_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
 				color: "#14c8b9"
 			}, {
 				x: Date.UTC(2015, 6, 30),
 				name: 'Animal Crossing: Happy Home Designer',
 				label: 'Animal Crossing: Happy Home Designer released.',
-				description: 'Platform: Nintendo 3DS' + 
+				description: 'Date: 7/30/2015 <br> Platform: Nintendo 3DS' + 
 				'<br><img src="./images/HH_cover.png"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
 				color: "#38f8d1"
 			}, {
 				x: Date.UTC(2015, 10, 13),
 				name: 'Animal Crossing: Amiibo Festival',
 				label: 'Animal Crossing: Amiibo Festival released.',
-				description: 'Platform: Wii U'+ 
+				description: 'Date: 11/13/2015 <br> Platform: Wii U'+ 
 				'<br><img src="./images/AF_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br><br>',
 				color: "#80a5fb"
 			}, {
 				x: Date.UTC(2017, 10, 21),
 				name: 'Animal Crossing: Pocket Camp',
 				label: 'Animal Crossing: Pocket Camp released.',
-				description: 'Platform: mobile'+ 
+				description: 'Date: 11/21/2017 <br> Platform: Mobile'+ 
 				'<br><img src="./images/PC_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
 				color: "#82a0aa"
 			}, {
 				x: Date.UTC(2020, 2, 20),
 				name: 'Animal Crossing: New Horizons',
 				label: 'Animal Crossing: New Horizons released.',
-				description: 'Platform: Nintendo Switch <br> Metacritic: 91'+ 
+				description: 'Date: 3/20/2020 <br> Platform: Nintendo Switch <br> Metacritic: 91'+ 
 				'<br><img src="./images/NH_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
 				color: "#ecde78"
 			}], function (chartt) { 
-
 				chartt.renderer.image('https://www.highcharts.com/samples/graphics/sun.png',5,5,30,30)
 					.add();
-					
 			}
 		}]
 	});	
@@ -303,7 +296,12 @@ function plotBar() {
 		},
 		tooltip: {
 			showAll: true,
-			shared: true
+			shared: true,
+			positioner: function(labelWidth, labelHeight, point) {
+				var tooltipX = point.plotX + 20;
+				var tooltipY = point.plotY;
+				return {x: tooltipX, y: tooltipY};
+			}
 		},
 		plotOptions: {
 			bar: {
@@ -318,11 +316,21 @@ function plotBar() {
 		series: [{
 			name: 'Sales',
 			data: [
-				{y: sales[0], color: gameColor[0]},
-				{y: sales[1], color: gameColor[1]},
-				{y: sales[2], color: gameColor[2]},
-				{y: sales[3], color: gameColor[3]}, 
-				{y: sales[4], color: gameColor[4]}],
+				{y: sales[0], color: gameColor[0], value: 0},
+				{y: sales[1], color: gameColor[1], value: 1},
+				{y: sales[2], color: gameColor[2], value: 2},
+				{y: sales[3], color: gameColor[3], value: 3},
+				{y: sales[4], color: gameColor[4], value: 4}],
+			dataLabels: {
+				useHTML: true,
+				formatter: function() {
+					if (this.y == 13.41) {
+						return '<span style="color: red; font-size: 16px;">' + this.y + '</span>';
+					} else {
+						return this.y;
+					}
+				}
+			},
 			showInLegend: false,
 		}]
 	});
@@ -696,7 +704,7 @@ function plotStock() {
 function plotMap() {
 	Highcharts.mapChart('usMap', {
 		title: {
-			text: ''
+			text: 'US Google Search Interest of Keyword "Animal Crossing" in Last 90 Days' 
 		},
 	
 		subtitle: {
@@ -744,11 +752,15 @@ function plotMap() {
 			joinBy: ['postal-code', 'code'],
             dataLabels: {
                 enabled: true,
-                color: '#FFFFFF',
+				style: {
+					color: '#f46623',
+					fontSize: '13px',
+					textOutline: false
+				},
                 format: '{point.value}'
 			},
 			borderWidth: 0.2,
-			borderColor: 'silver',
+			borderColor: 'orange',
 			states: {
 				hover: {
 					color: '#94d6e3',
@@ -775,11 +787,10 @@ function plotPie() {
 			plotShadow: false
 		},
 		subtitle: {
-			text: 'source: <a href="https://newzoo.com/insights/articles/male-and-female-gamers-how-their-similarities-and-differences-shape-the-games-market/">www.earnest.com</a >',
-
+			text: 'source: <a href="https://newzoo.com/insights/articles/male-and-female-gamers-how-their-similarities-and-differences-shape-the-games-market/">www.earnest.com</a >'
 		},
 		title: {
-			text: 'Console Players',
+			text: 'Age/Gender <br> of Console Players',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
@@ -830,7 +841,14 @@ function plotPie() {
 				['M21-35', 34],
 				['M36-50', 15],
 				['M51-65', 2]
-			]
+			],
+			dataLabels: {
+				style: {
+					color: 'black',
+					fontSize: '11px',
+					textOutline: false
+				}
+			}
 		}]
 	});
 
@@ -845,11 +863,10 @@ function plotPie() {
 			plotShadow: false
 		},
 		subtitle: {
-			text: 'source: <a href="https://manamina.valuesccg.com/articles/800">manamina.valuesccg.com</a >',
-
+			text: 'source: <a href="https://manamina.valuesccg.com/articles/800">manamina.valuesccg.com</a >'
 		},
 		title: {
-			text: 'Animal Crossing<br> Players',
+			text: 'Age/Gender <br> of AC Players',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
@@ -895,12 +912,19 @@ function plotPie() {
 				['F20-29', 51.3*0.505],
 				['F30-39', 51.3*0.224],
 				['F40-49', 51.3*0.183],
-				['F50', 51.3*0.088],
+				['F50+', 51.3*0.088],
 				['M20-29', 48.7*0.505],
 				['M30-39', 48.7*0.224],
 				['M40-49', 48.7*0.183],
-				['M50', 48.7*0.088],
-			]
+				['M50+', 48.7*0.088],
+			],
+			dataLabels: {
+				style: {
+					color: 'black',
+					fontSize: '11px',
+					textOutline: false
+				}
+			}
 		}]
 	});
 }
@@ -927,7 +951,7 @@ function plotCloud() {
 		},
 
 		title: {
-			text: ''
+			text: 'Wordcloud of Hashtags of Animal Crossing on Twitter'
 		},
 
 		subtitle: {
