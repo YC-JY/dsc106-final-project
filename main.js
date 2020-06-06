@@ -1,8 +1,8 @@
 let name = ['Animal Crossing', 
-   'Animal Crossing: Wild World', 
-   'Animal Crossing: City Fold', 
-   'Animal Crossing: New Leaf',
-   'Animal Crossing: New Horizons'];
+			'Animal Crossing: Wild World', 
+			'Animal Crossing: City Fold', 
+			'Animal Crossing: New Leaf',
+			'Animal Crossing: New Horizons'];
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
 let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
 
@@ -180,7 +180,11 @@ function plotTimeline() {
 			enabled: false
 		},
 		title: {
-			text: 'Timeline of Animal Crossing'
+			text: '',
+			style: {
+				fontSize: '30px',
+				color: gameColor[0]
+			}
 		},
 		subtitle: {
 			text: 'source: <a href="https://en.wikipedia.org/wiki/Animal_Crossing">www.wikipedia.org</a >'
@@ -227,7 +231,7 @@ function plotTimeline() {
 				name: 'Animal Crossing: City Folk',
 				label: 'Animal Crossing: City Folk released.',
 				description: 'Platform: Wii <br> Metacritic: 73'+ 
-				'<br><img src="./images/CF_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
+				'<br><img src="./images/CF_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br><br>',
 				color: "#93d6e3"
 			}, {
 				x: Date.UTC(2012, 10, 8),
@@ -264,7 +268,7 @@ function plotTimeline() {
 				description: 'Platform: Nintendo Switch <br> Metacritic: 91'+ 
 				'<br><img src="./images/NH_cover.jpg"style="height:45%;width:45%;" class="center"></img><br><br><br><br>',
 				color: "#ecde78"
-			}], function (chartt) { // on complete
+			}], function (chartt) { 
 
 				chartt.renderer.image('https://www.highcharts.com/samples/graphics/sun.png',5,5,30,30)
 					.add();
@@ -280,7 +284,7 @@ function plotBar() {
 			type: 'bar'
 		},
 		title: {
-			text: 'Series Sales'
+			text: 'Main Series Global Sales'
 		},
 		subtitle: {
 			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
@@ -288,13 +292,13 @@ function plotBar() {
 		xAxis: {
 			categories: name,
 			title: {
-				text: 'Series'
+				text: 'Main Series'
 			}
 		},
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Sales (millions)'
+				text: 'Global Sales (millions)'
 			}
 		},
 		tooltip: {
@@ -318,7 +322,7 @@ function plotBar() {
 				{y: sales[1], color: gameColor[1]},
 				{y: sales[2], color: gameColor[2]},
 				{y: sales[3], color: gameColor[3]}, 
-                {y: sales[4], color: gameColor[4]}],
+				{y: sales[4], color: gameColor[4]}],
 			showInLegend: false,
 		}]
 	});
@@ -364,15 +368,7 @@ function plotStock() {
                     positions.push(tick);
                 }
                 return positions;
-			},
-			plotLines: [{
-				color: '#888',
-				value: 1584687600,
-				width: 1,
-				label: {
-					text: 'Animal Crossing: New Horizons released'
-				}
-			}],
+			}
 		},
 	
 		yAxis: {
@@ -595,7 +591,7 @@ function plotStock() {
 			name:'NS',
 			id: 'NS',
 			color: gameColor[3],
-	  		lineWidth: 5,
+			lineWidth: 5,
 			data: [
 			{
 				x: 1578096000000,
@@ -687,8 +683,8 @@ function plotStock() {
 			type: 'flags',
 			data: [{
 				x: Date.UTC(2020, 2, 20),
-				title: 'Animal Crossing: New Horizons',
-				text: 'Officially released',
+				title: 'ACNH officially released',
+				text: 'large spike',
 			}],
 			onSeries: 'NS',
 			y: -50,
@@ -696,11 +692,11 @@ function plotStock() {
 		}]
 	});
 }
-   
+
 function plotMap() {
 	Highcharts.mapChart('usMap', {
 		title: {
-			text: 'US Google Trends'
+			text: ''
 		},
 	
 		subtitle: {
@@ -749,7 +745,7 @@ function plotMap() {
             dataLabels: {
                 enabled: true,
                 color: '#FFFFFF',
-                format: '{point.code}'
+                format: '{point.value}'
 			},
 			borderWidth: 0.2,
 			borderColor: 'silver',
@@ -776,283 +772,7 @@ function plotPie() {
 		chart: {
 			plotBackgroundColor: null,
 			plotBorderWidth: 0,
-			plotShadow: false,
-			type: 'pie'
-		},
-		subtitle: {
-			text: 'source: <a href="https://newzoo.com/insights/articles/male-and-female-gamers-how-their-similarities-and-differences-shape-the-games-market/">www.earnest.com</a >',
-
-		},
-		title: {
-			text: 'Console Players',
-			align: 'center',
-			verticalAlign: 'middle',
-			y: 60
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-		},
-		accessibility: {
-			point: {
-				valueSuffix: '%'
-			}
-		},
-		plotOptions: {
-			pie: {
-				dataLabels: {
-					enabled: true,
-					distance: -50,
-					style: {
-						fontWeight: 'bold',
-						color: 'white'
-					}
-				},
-				startAngle: -90,
-				endAngle: 90,
-				center: ['50%', '75%'],
-				size: '110%',
-				pie: {
-                    shadow: false
-				},
-				colors: pieColor2
-			}
-		},
-		legend: {
-			symbolPadding: 0,
-			symbolWidth: 50
-		},
-		series: [{
-			type: 'pie',
-			name: 'Proportion',
-			innerSize: '50%',
-			showInLegend:true,
-			data: [
-				['F10-20', 8],
-				['F21-35', 14],
-				['F36-50', 6],
-				['F51-65', 2],
-				['M10-20', 19],
-				['M21-35', 34],
-				['M36-50', 15],
-				['M51-65', 2]
-			]
-		}]
-	});
-
-
-	Highcharts.chart('pieAnimalCrossing', {
-		credits: {
-			enabled: false
-		},
-		chart: {
-			plotBackgroundColor: null,
-			plotBorderWidth: 0,
 			plotShadow: false
-		},
-		subtitle: {
-			text: 'source: <a href="https://manamina.valuesccg.com/articles/800">manamina.valuesccg.com</a >',
-
-		},
-		title: {
-			text: 'Animal Crossing<br> Players',
-			align: 'center',
-			verticalAlign: 'middle',
-			y: 60
-		},
-		tooltip: {
-			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-		},
-		accessibility: {
-			point: {
-				valueSuffix: '%'
-			}
-		},
-		plotOptions: {
-			pie: {
-				dataLabels: {
-					enabled: true,
-					distance: -50,
-					style: {
-						fontWeight: 'bold',
-						color: 'white'
-					}
-				},
-				startAngle: -90,
-				endAngle: 90,
-				center: ['50%', '75%'],
-				size: '110%',
-				pie: {
-                    shadow: false
-				},
-				colors: pieColor
-			}
-		},
-		legend: {
-			symbolPadding: 0,
-			symbolWidth: 50
-		},
-		series: [{
-			type: 'pie',
-			name: 'Proportion',
-			innerSize: '50%',
-			showInLegend:true,
-			data: [
-				['F20-29', 51.3*0.505],
-				['F30-39', 51.3*0.224],
-				['F40-49', 51.3*0.183],
-				['F50+', 51.3*0.088],
-				['M20-29', 48.7*0.505],
-				['M30-39', 48.7*0.224],
-				['M40-49', 48.7*0.183],
-				['M50+', 48.7*0.088],
-			]
-		}]
-	});
-	
-}
-
-function plotPie2() {
-	var colors = Highcharts.getOptions().colors,
-    categories = [
-        'Female',
-        'Male'
-    ],
-    data = [
-        {
-            y: 30,
-            color: pieColor[0],
-            drilldown: {
-                name: 'Female',
-                categories: [
-                    'F10-20',
-                    'F21-35',
-                    'F36-50',
-                    'F51-65'
-                ],
-                data: [8,14,6,2]
-            }
-        },
-        {
-            y: 70,
-            color: pieColor[4],
-            drilldown: {
-                name: 'Male',
-                categories: [
-                    'M10-20',
-                    'M21-35',
-                    'M36-50',
-                    'M51-65'
-                ],
-				data: [19,34,15,2]
-            }
-        }
-    ],
-    browserData = [],
-    versionsData = [],
-    i,
-    j,
-    dataLen = data.length,
-    drillDataLen,
-    brightness;
-
-
-// Build the data arrays
-for (i = 0; i < dataLen; i += 1) {
-
-    // add browser data
-    browserData.push({
-        name: categories[i],
-        y: data[i].y,
-        color: data[i].color
-    });
-
-    // add version data
-    drillDataLen = data[i].drilldown.data.length;
-    for (j = 0; j < drillDataLen; j += 1) {
-        brightness = 0.2 - (j / drillDataLen) / 5;
-        versionsData.push({
-            name: data[i].drilldown.categories[j],
-            y: data[i].drilldown.data[j],
-            color: Highcharts.color(data[i].color).brighten(brightness).get()
-        });
-    }
-}
-
-// Create the chart
-Highcharts.chart('pieGame2', {
-    chart: {
-        type: 'pie'
-    },
-    title: {
-        text: 'Browser market share, January, 2018'
-    },
-    subtitle: {
-        text: 'Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
-    },
-    plotOptions: {
-		
-        pie: {
-            shadow: false,
-			center: ['50%', '50%'],
-			startAngle: -90,
-			endAngle: 90
-        }
-    },
-    tooltip: {
-        valueSuffix: '%'
-    },
-    series: [{
-        name: 'Browsers',
-        data: browserData,
-        size: '60%',
-        dataLabels: {
-            formatter: function () {
-                return this.y > 5 ? this.point.name : null;
-            },
-            color: '#ffffff',
-            distance: -30
-        }
-    }, {
-        name: 'Versions',
-        data: versionsData,
-        size: '80%',
-        innerSize: '60%',
-        dataLabels: {
-            formatter: function () {
-                // display only if larger than 1
-                return this.y > 1 ? '<b>' + this.point.name + ':</b> ' +
-                    this.y + '%' : null;
-            }
-        },
-        id: 'versions'
-    }],
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 400
-            },
-            chartOptions: {
-                series: [{
-                }, {
-                    id: 'versions',
-                    dataLabels: {
-                        enabled: true
-                    }
-                }]
-            }
-        }]
-    }
-});
-
-	Highcharts.chart('pieGame3', {
-		credits: {
-			enabled: false
-		},
-		chart: {
-			plotBackgroundColor: null,
-			plotBorderWidth: 0,
-			plotShadow: false,
-			type: 'pie'
 		},
 		subtitle: {
 			text: 'source: <a href="https://newzoo.com/insights/articles/male-and-female-gamers-how-their-similarities-and-differences-shape-the-games-market/">www.earnest.com</a >',
@@ -1115,7 +835,7 @@ Highcharts.chart('pieGame2', {
 	});
 
 
-	Highcharts.chart('pieAnimalCrossing2', {
+	Highcharts.chart('pieAnimalCrossing', {
 		credits: {
 			enabled: false
 		},
@@ -1179,11 +899,10 @@ Highcharts.chart('pieGame2', {
 				['M20-29', 48.7*0.505],
 				['M30-39', 48.7*0.224],
 				['M40-49', 48.7*0.183],
-				['M50+', 48.7*0.088],
+				['M50', 48.7*0.088],
 			]
 		}]
 	});
-	
 }
 
 function plotCloud() {
@@ -1208,7 +927,7 @@ function plotCloud() {
 		},
 
 		title: {
-			text: 'Wordcloud of Animal Crossing on Twitter'
+			text: ''
 		},
 
 		subtitle: {
@@ -1239,7 +958,11 @@ function plotCalendar() {
 		},
 	  
 		title: {
-			text: 'June Birthday Calendar'
+			text: 'June Calendar'
+		},
+
+		subtitle: {
+			text: 'source: <a href="https://nookipedia.com/wiki/Weber">www.nookipedia.com</a >'
 		},
 
 		credits: {
@@ -1262,7 +985,7 @@ function plotCalendar() {
 		plotOptions: {
 			series: {
 				borderWidth: 1,
-				borderColor: "#000000",
+				borderColor: "#795a9c",
 			}
 		},
 
@@ -1291,13 +1014,12 @@ function plotCalendar() {
 	});
 }
 
-function init(){
+function init() { 
 	plotTimeline();
 	plotBar();
 	plotStock();
 	plotMap();
 	plotPie();
-	//plotPie2();
 	plotCloud();
-	plotCalendar();	
+	plotCalendar();
 }

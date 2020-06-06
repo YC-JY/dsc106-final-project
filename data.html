@@ -25,65 +25,85 @@
 </head>
 
 <body onload="init();">
-	<div id="content">		
-		<h1>Story of Animal Crossing</h1>
-
-		<img id="pic" src="https://www.highcharts.com/samples/graphics/sun.png" alt="Animal Crossing"/>
-
-		<hr />
+	<div id="content">	
+		<section>
+			<h2 id = "title1">Release Timeline of Animal Crossing Series</h2>
+			<section id="timeline" class="chart--container2"></section>
+		</section>
+		<hr id = "hr1"/>
 
 		<section>
-			<h1>Timeline</h1>
-			<section id="timeline" class="chart--container"></section>
+			<h2 id="title2">Animal Crossing Main Series Global Sales</h2>
+			<section class="flex-container">
+				<div class="flex-item1">
+					<section id="seriesSales" ></section>
+				</div>
+				<div class="flex-item2">
+					<p>Animal Crossing Series is getting more and more popular.</p>
+				</div>
+			</section>	
 		</section>
-		<hr />
+		<hr id = "hr2"/>
 
 		<section>
-			<h1>Series Sales</h1>
-			<section id="seriesSales" class="chart--container"></section>
+			<h2 id="title3">Global Hardware Sales</h2>
+			<section class="flex-container">
+				<div class="flex-item2">
+					<p>Nintendo Switch sales had a large spike when Animal Crossing: New Horizons was officially released on March 20.</p>
+				</div>
+				<div class="flex-item1">
+					<section id="stockChart"></section>
+				</div>
+			</section>
+			
 		</section>
-		<hr />
+		<hr id = "hr3"/>
 
 		<section>
-			<h1>Switch Sales</h1>
-			<section id="stockChart" class="chart--container"></section>
+			<h2 id="title4">US Google Search Interest of Keyword "Animal Crossing"</h2>
+			<p>Animal Crossing is more popular in western United States.</p>
+			<section id="usMap" class="chart--container2"></section>
 		</section>
-		<hr />
-
-		<section>
-			<h1>Google Trends</h1 >
-			<section id="usMap" class="chart--container"></section>
-		</section>
-		<hr />
+		<hr id = "hr4"/>
 
 		<div>
-			<h1>Age and Gender Distribution</h1>
+			<h2 id="title5">Age and Gender Distribution</h2>
 			<section class="chart-parent--container">
 				<section id="pieGame" class="chart--container"></section>
 				<section id="pieAnimalCrossing" class="chart--container"></section>
 			</section>
-			<section>
-				<p>Kyogoku, the current manager of Nintendo's Entertainment Planning & Development (EPD) Group No. 5, is the producer, director, and supervisor of Animal Crossing series since 2008</p>
-				<img src="./images/Kyogoku Cropped.jpg" class="center">
-
+			<section class="flex-container">
+				<div class="flex-item2">
+					<img src="./images/Kyogoku Cropped.jpg" class="center">
+				</div>
+				<div class="flex-item1">
+					<p>Kyogoku, the current manager of Nintendo's Entertainment Planning & Development (EPD) Group No. 5, is the producer, director, and supervisor of Animal Crossing series since 2008.</p>
+				</div>
 			</section>
-			
 		</div>
-		<hr />
+		<hr id = "hr5"/>
 
 		<section>
-			<figure class="highcharts-figure">
-				<div id="wordCloud"></div>
-			</figure> 
-		</section> 
-		<hr />
-		
+			<h2 id="title6">Wordcsloud of Hashtags of Animal Crossing on Twitter</h2>
+			<section class="flex-container">
+				<div class="flex-item2">
+					<p> Most words used in tweets hashtagged Animal Crossing are positive.</p>
+				</div>
+				<div class="flex-item1">
+					<figure>
+						<div id="wordCloud"></div>
+					</figure>	
+				</div>
+			</section>
+		</section>	
+		<hr id = "hr6"/>
+
 		<section>
-			<p>Villagers Born in June</p >
-			<section id="calendar" class="chart--container"></section>
+			<h2 id="title7">Villagers Born in June</h2>
+			<p>There are over 390 different villagers in Animal Crossing: New Horizons. <br> Each one of them sports a unique appearance, personality, house, and even catchphrase.</p>
+			<section id="calendar" class="chart--container3"></section>
 		</section>
-	
-	</div>	
+	</div>
 </body>
 
 </html>

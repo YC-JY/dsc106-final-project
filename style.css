@@ -7,6 +7,12 @@ h1 {
     font-size: 50px;
 }
 
+h2 {
+    font-family: 'Jura', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
 h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
@@ -19,22 +25,36 @@ body  {
     background-size: cover;
 }
 
+#vitalScorecards {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+}
+
 p {
-    font-size: 30px;
+    font-family: 'Jura', sans-serif;
+    text-align: center;
 }
 
 #content {
     background-color: white;
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 2%;
+    margin-top: 20%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    border-color: lightyellow;
     border: 15px solid transparent;
     border-image: linear-gradient(to bottom right, #f3747b 0%, #93d6e3 25%, #14c8b9 50%, #ecde78 75%, #b19bcb 100%);
     border-image-slice: 1;
+}
+
+.dashboard {
+    font-family: 'Jura', sans-serif;
+    color: blue;
+    font-size: 30px;
 }
 
 .chart-parent--container {
@@ -46,6 +66,45 @@ p {
     width: 100%;
     min-height: 500px;
     margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.chart--container2 {
+    height: 100%;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 5%;
+}
+
+.chart--container3 {
+    height: 100%;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.flex-item1 {
+    width: 70%; 
+    text-align: center;
+}
+
+.flex-item2 {
+    width: 30%; 
+    text-align: center;
 }
 
 #usMap {
@@ -62,4 +121,103 @@ p {
     margin-bottom: 3%;
 }
 
+#console {
+    background-image: url("./images/console.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; 
+    width: 100vw; 
+    background-size: 90% 70%;
+    background-position: center center; 
+}
 
+#screen {
+    padding-top: 30vh;
+    text-align: center;
+    justify-content: center;
+}
+
+#title1 {
+    color: #80a5fb;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+
+#hr1 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #80a5fb, #82caa5);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title2 {
+    color: #82caa5;
+}
+
+#hr2 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #82caa5, #b19bcb);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title3 {
+    color: #b19bcb;
+}
+
+#hr3 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #b19bcb, #93d6e3);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title4 {
+    color: #93d6e3;
+}
+
+#hr4 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #93d6e3, #f8996d);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title5 {
+    color: #f8996d;
+}
+
+#hr5 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #f8996d, #14c8b9);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title6 {
+    color: #14c8b9; 
+}
+
+#hr6 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #14c8b9, #f3747b);
+    height: 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+#title7 {
+    color: #f3747b;
+}
