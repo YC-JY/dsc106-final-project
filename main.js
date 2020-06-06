@@ -384,7 +384,11 @@ function plotStock() {
 		},
 	
 		legend: {
-			enabled: true
+			enabled: true,
+			align: 'right',
+			layout: 'vertical',
+			verticalAlign: 'top',
+			y: 100
 		},	
 
 		navigator: {
