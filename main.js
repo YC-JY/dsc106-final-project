@@ -157,57 +157,6 @@ let date = [
 	{'x': 2, 'y': 0, 'value': '30 <br> Broccolo & Weber', 'description': '<img alt="Broccolo, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/8/89/Broccolo_NLa.png/175px-Broccolo_NLa.png" decoding="async" width="175" height="276" srcset="https://dodo.ac/np/images/thumb/8/89/Broccolo_NLa.png/263px-Broccolo_NLa.png 1.5x, https://dodo.ac/np/images/8/89/Broccolo_NLa.png 2x"> <img alt="Weber, an Animal Crossing villager." src="https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/200px-Weber_NH.png" decoding="async" width=160" height="276" srcset="https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/300px-Weber_NH.png 1.5x, https://dodo.ac/np/images/thumb/6/66/Weber_NH.png/400px-Weber_NH.png 2x">'}
 ];
 
-function plotBar() {
-	Highcharts.chart('seriesSales', {
-		chart: {
-			type: 'bar'
-		},
-		title: {
-			text: 'Series Sales'
-		},
-		subtitle: {
-			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
-		},
-		xAxis: {
-			categories: name,
-			title: {
-				text: 'Series'
-			}
-		},
-		yAxis: {
-			min: 0,
-			title: {
-				text: 'Sales (millions)'
-			}
-		},
-		tooltip: {
-			showAll: true,
-			shared: true
-		},
-		plotOptions: {
-			bar: {
-				dataLabels: {
-					enabled: true
-				}
-			}
-		},
-		credits: {
-			enabled: false
-		},
-		series: [{
-			name: 'Sales',
-			data: [
-				{y: sales[0], color: gameColor[0]},
-				{y: sales[1], color: gameColor[1]},
-				{y: sales[2], color: gameColor[2]},
-				{y: sales[3], color: gameColor[3]}, 
-                {y: sales[4], color: gameColor[4]}],
-			showInLegend: false,
-		}]
-	});
-}
-
-
 function plotTimeline() {
 	Highcharts.chart('timeline', {
 		credits: {
@@ -323,6 +272,56 @@ function plotTimeline() {
 			}
 		}]
 	});	
+}
+
+function plotBar() {
+	Highcharts.chart('seriesSales', {
+		chart: {
+			type: 'bar'
+		},
+		title: {
+			text: 'Series Sales'
+		},
+		subtitle: {
+			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
+		},
+		xAxis: {
+			categories: name,
+			title: {
+				text: 'Series'
+			}
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Sales (millions)'
+			}
+		},
+		tooltip: {
+			showAll: true,
+			shared: true
+		},
+		plotOptions: {
+			bar: {
+				dataLabels: {
+					enabled: true
+				}
+			}
+		},
+		credits: {
+			enabled: false
+		},
+		series: [{
+			name: 'Sales',
+			data: [
+				{y: sales[0], color: gameColor[0]},
+				{y: sales[1], color: gameColor[1]},
+				{y: sales[2], color: gameColor[2]},
+				{y: sales[3], color: gameColor[3]}, 
+                {y: sales[4], color: gameColor[4]}],
+			showInLegend: false,
+		}]
+	});
 }
 
 function plotStock() {
@@ -1236,7 +1235,7 @@ function plotCalendar() {
 		},
 	  
 		title: {
-			text: 'June Calendar'
+			text: 'June Birthday Calendar'
 		},
 
 		credits: {
@@ -1291,9 +1290,10 @@ function plotCalendar() {
 function init(){
 	plotTimeline();
 	plotBar();
-	plotPie();
 	plotStock();
 	plotMap();
+	plotPie();
+	//plotPie2();
 	plotCloud();
-	plotCalendar();
+	plotCalendar();	
 }
