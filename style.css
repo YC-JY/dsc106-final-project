@@ -57,31 +57,6 @@ p {
 .chart--container {
     height: 100%;
     width: 100%;
-    min-height: 400px;
-}
-
-#vitalScorecards h3 {
-    color: black;
-}
-
-#vitalScorecards output {
-    font-size: xx-large;
-    color: blue;
-}
-
-#totalSales:before {
-    content: '$';
-    font-size: xx-large;
-    color: green;
-}
-
-.chart-parent--container {
-    display: flex;
-}
-
-.chart--container {
-    height: 100%;
-    width: 100%;
     min-height: 500px;
     margin: 0 auto;
 }

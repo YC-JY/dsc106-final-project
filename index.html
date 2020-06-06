@@ -20,6 +20,8 @@
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
 	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
 	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+	<script src="https://code.highcharts.com/modules/heatmap.js"></script>
 </head>
 
 <body onload="init();">
@@ -54,7 +56,6 @@
 		<h1>Story of Animal Crossing</h1>
 
 		<img id="pic" src="https://www.highcharts.com/samples/graphics/sun.png" alt="Animal Crossing"/>
-
 		<hr />
 
 		<section>
@@ -105,19 +106,17 @@
 		</div>
 		<hr />
 		
-		<section id="summaryCharts" class="chart-parent--container">
-			<p>previous vs. current</p>
-			<section id="previousChart" class="chart--container"></section>
-			<section id="currentChart" class="chart--container"></section>
-		</section>
-
+		<section>
+			<figure class="highcharts-figure">
+				<div id="wordCloud"></div>
+			</figure>	
+		</section>	
 		<hr />
 
 		<section>
-			<p>switch sales before vs. after</p>
+			<p>Villagers Born in June</p>
+			<section id="calendar" class="chart--container"></section>
 		</section>
-
-		<hr />
 	</div>	
 </body>
 
