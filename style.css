@@ -95,6 +95,7 @@ p {
 
 .flex-item1 {
     width: 70%; 
+    padding-right: 3%;
     text-align: center;
 }
 
@@ -104,7 +105,7 @@ p {
 }
 
 #usMap {
-    height: 630px;
+    height: 570px;
 }
 
 .center {

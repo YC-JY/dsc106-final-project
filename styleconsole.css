@@ -40,18 +40,19 @@ h3 {
 }
 
 #screen {
-    padding-top: 12%;
-    padding-left: 23%;
-    padding-right: 23%;
+    margin-top: 22vh;
+    margin-bottom: 40vh;
+    margin-left: 23vw;
+    margin-right: 23vw;
     text-align: center;
     justify-content: center;
+    width: auto;
     height: auto;
 }
 
 
 #vitalScorecards {
     display: grid;
-    grid-column-gap: 50px;
     grid-template-columns: auto auto auto auto;
     text-align: center;
 }
