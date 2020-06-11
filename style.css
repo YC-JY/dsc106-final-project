@@ -133,6 +133,7 @@ p {
     padding-top: 30vh;
     text-align: center;
     justify-content: center;
+    height: auto;
 }
 
 #title1 {
