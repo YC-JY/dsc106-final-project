@@ -235,3 +235,18 @@ p {
     font-size: 25px;
     color: #f8996d;
 }
+
+#hr7 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: linear-gradient(to right, #f8996d, #82a0aa);
+    height: 2px;
+    width: 80%;
+    border: none;
+    border-radius: 3px;
+}
+
+#title9 {
+    font-size: 25px;
+    color: #82a0aa;
+}
