@@ -239,7 +239,7 @@ p {
 #hr7 {
     margin-top: 10%;
     margin-bottom: 10%;
-    background: linear-gradient(to right, #f8996d, #82a0aa);
+    background: linear-gradient(to right, #f3747b, #82a0aa);
     height: 2px;
     width: 80%;
     border: none;
@@ -249,4 +249,8 @@ p {
 #title9 {
     font-size: 25px;
     color: #82a0aa;
+}
+
+#ending {
+    margin-bottom: 10%;
 }
